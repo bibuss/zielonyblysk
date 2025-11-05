@@ -315,8 +315,29 @@ img {
   color: var(--gradient-end);
 }
 
+.form-status.pending {
+  color: var(--text);
+}
+
 .form-status.error {
   color: #d14343;
+}
+
+.form-status.queued {
+  color: #f59e0b;
+}
+
+.form-noscript {
+  display: block;
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.form-noscript a {
+  color: inherit;
+  text-decoration: underline;
+  font-weight: 500;
 }
 
 label span {

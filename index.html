@@ -72,6 +72,8 @@
             <p>Opowiedz nam o swojej przestrzeni. Oddzwonimy w 15 minut.</p>
             <form
               class="quote-form"
+              method="post"
+              action="mailto:biuro@zielonyblysk.pl"
               data-form="quote"
               data-endpoint="https://jsonplaceholder.typicode.com/posts"
               data-success-message="Dziękujemy! Oddzwonimy w ciągu 15 minut."
@@ -97,6 +99,11 @@
               </label>
               <button type="submit" class="btn primary full">Wyślij zapytanie</button>
               <p class="form-status" role="status" aria-live="polite"></p>
+              <noscript class="form-noscript">
+                Aby wysłać formularz online, włącz JavaScript. Możesz też zadzwonić
+                pod <a href="tel:+48555444333">+48 555 444 333</a> lub wysłać
+                wiadomość na <a href="mailto:biuro@zielonyblysk.pl">biuro@zielonyblysk.pl</a>.
+              </noscript>
             </form>
           </div>
         </div>
@@ -246,9 +253,9 @@
                 <span class="material-icon">call</span>
                 +48 555 444 333
               </a>
-              <a href="mailto:kontakt@zielonyblysk.pl" class="contact-link">
+              <a href="mailto:biuro@zielonyblysk.pl" class="contact-link">
                 <span class="material-icon">mail</span>
-                kontakt@zielonyblysk.pl
+                biuro@zielonyblysk.pl
               </a>
               <div class="contact-link">
                 <span class="material-icon">location_on</span>
@@ -258,6 +265,8 @@
           </div>
           <form
             class="contact-form"
+            method="post"
+            action="mailto:biuro@zielonyblysk.pl"
             data-form="contact"
             data-endpoint="https://jsonplaceholder.typicode.com/posts"
             data-success-message="Dziękujemy! Wkrótce się odezwiemy."
@@ -277,6 +286,11 @@
             </label>
             <button type="submit" class="btn primary full">Wyślij wiadomość</button>
             <p class="form-status" role="status" aria-live="polite"></p>
+            <noscript class="form-noscript">
+              Aby skorzystać z wysyłki online, włącz JavaScript. Możesz także zadzwonić
+              pod <a href="tel:+48555444333">+48 555 444 333</a> lub wysłać wiadomość na
+              <a href="mailto:biuro@zielonyblysk.pl">biuro@zielonyblysk.pl</a>.
+            </noscript>
           </form>
         </div>
       </section>
