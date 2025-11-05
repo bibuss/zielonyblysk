@@ -70,7 +70,14 @@
           <div class="card">
             <h2>Bezpłatna wycena</h2>
             <p>Opowiedz nam o swojej przestrzeni. Oddzwonimy w 15 minut.</p>
-            <form class="quote-form">
+            <form
+              class="quote-form"
+              action="https://formsubmit.co/kontakt@zielonyblysk.pl"
+              method="POST"
+              data-endpoint="https://formsubmit.co/ajax/kontakt@zielonyblysk.pl"
+              data-success-message="Dziękujemy! Skontaktujemy się z Tobą z wyceną."
+              data-error-message="Coś poszło nie tak. Spróbuj ponownie lub zadzwoń do nas."
+            >
               <label>
                 <span>Imię</span>
                 <input type="text" name="name" placeholder="Anna" required />
@@ -89,7 +96,12 @@
                   <option>Mycie okien</option>
                 </select>
               </label>
+              <input type="hidden" name="formularz" value="Bezpłatna wycena" />
+              <input type="hidden" name="_subject" value="Nowa prośba o wycenę" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
               <button type="submit" class="btn primary full">Wyślij zapytanie</button>
+              <p class="form-status" aria-live="polite"></p>
             </form>
           </div>
         </div>
@@ -147,33 +159,33 @@
                 <span class="avatar">AM</span>
                 <div>
                   <strong>Anna, managerka biura</strong>
-                  <span>Warszawa</span>
+                  <span>Tarnów</span>
                 </div>
               </div>
             </article>
             <article class="testimonial-card">
               <p>
                 „Pierwszy raz spotkałam ekipę, która tak dba o szczegóły. Moje mieszkanie
-                błyszczy jak nigdy!”
+                w Tarnowie błyszczy jak nigdy!”
               </p>
               <div class="testimonial-author">
                 <span class="avatar">JK</span>
                 <div>
                   <strong>Julia, właścicielka mieszkania</strong>
-                  <span>Kraków</span>
+                  <span>Tarnów</span>
                 </div>
               </div>
             </article>
             <article class="testimonial-card">
               <p>
                 „Po remoncie bałem się, że sprzątanie potrwa dni. Zielony Błysk poradził sobie
-                w jeden wieczór. Polecam!”
+                w jeden wieczór. Tarnów może na nich liczyć!”
               </p>
               <div class="testimonial-author">
                 <span class="avatar">MP</span>
                 <div>
                   <strong>Michał, właściciel firmy</strong>
-                  <span>Gdańsk</span>
+                  <span>Tarnów</span>
                 </div>
               </div>
             </article>
@@ -249,7 +261,14 @@
               </div>
             </div>
           </div>
-          <form class="contact-form">
+          <form
+            class="contact-form"
+            action="https://formsubmit.co/kontakt@zielonyblysk.pl"
+            method="POST"
+            data-endpoint="https://formsubmit.co/ajax/kontakt@zielonyblysk.pl"
+            data-success-message="Dziękujemy za wiadomość! Odpowiemy najszybciej jak to możliwe."
+            data-error-message="Nie udało się wysłać wiadomości. Sprawdź połączenie i spróbuj ponownie."
+          >
             <label>
               <span>Imię i nazwisko</span>
               <input type="text" name="fullname" placeholder="Jan Kowalski" required />
@@ -262,7 +281,12 @@
               <span>Wiadomość</span>
               <textarea name="message" rows="5" placeholder="Opisz swoje potrzeby" required></textarea>
             </label>
+            <input type="hidden" name="formularz" value="Formularz kontaktowy" />
+            <input type="hidden" name="_subject" value="Nowe zgłoszenie z formularza kontaktowego" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
             <button type="submit" class="btn primary full">Wyślij wiadomość</button>
+            <p class="form-status" aria-live="polite"></p>
           </form>
         </div>
       </section>

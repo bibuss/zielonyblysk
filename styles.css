@@ -322,6 +322,31 @@ textarea:focus {
   box-shadow: 0 0 0 3px rgba(0, 208, 122, 0.2);
 }
 
+.form-status {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-top: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  background: rgba(26, 195, 91, 0.12);
+  border-left: 4px solid var(--gradient-start);
+  color: var(--text);
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.form-status.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.form-status.error {
+  background: rgba(218, 58, 58, 0.12);
+  border-color: #da3a3a;
+  color: #a32222;
+}
+
 .features,
 .testimonials,
 .pricing,
