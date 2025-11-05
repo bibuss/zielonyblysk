@@ -190,14 +190,49 @@ img {
 }
 
 .hero-highlight {
-  background: rgba(255, 255, 255, 0.12);
-  border-radius: 0.75rem;
-  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: linear-gradient(135deg, rgba(10, 137, 65, 0.95), rgba(26, 195, 91, 0.85));
+  border-radius: 1rem;
+  padding: 1.2rem 1.5rem;
+  color: var(--white);
+  box-shadow: 0 20px 45px rgba(10, 137, 65, 0.25);
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.hero-highlight-icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+  font-size: 1.8rem;
+  color: inherit;
+  flex-shrink: 0;
+}
+
+.hero-highlight-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.hero-highlight-title,
+.hero-highlight-subtitle {
+  margin: 0;
+}
+
+.hero-highlight-title {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.hero-highlight-subtitle {
   font-size: 0.95rem;
   line-height: 1.6;
-  color: var(--white);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  margin-bottom: 2rem;
 }
 
 .hero-highlight a {
