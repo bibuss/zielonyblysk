@@ -189,6 +189,23 @@ img {
   margin-bottom: 2rem;
 }
 
+.hero-highlight {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--white);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+}
+
+.hero-highlight a {
+  color: inherit;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
 .hero-actions {
   display: flex;
   gap: 1rem;
@@ -729,6 +746,7 @@ textarea:focus {
 }
 
 .features h2,
+.use-cases h2,
 .seo-intro h2,
 .service-areas h2,
 .testimonials h2,
@@ -792,6 +810,66 @@ textarea:focus {
   box-shadow: var(--card-shadow);
   display: grid;
   gap: 1.4rem;
+}
+
+.use-cases {
+  background: linear-gradient(180deg, #ffffff 0%, rgba(0, 208, 122, 0.08) 100%);
+}
+
+.use-case-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.use-case-card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 30px 65px rgba(15, 69, 34, 0.15);
+  display: grid;
+  gap: 1.2rem;
+}
+
+.use-case-card h3 {
+  font-size: 1.35rem;
+}
+
+.use-case-meta {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--gradient-end);
+  letter-spacing: 0.02em;
+}
+
+.use-case-list {
+  list-style: none;
+  display: grid;
+  gap: 0.75rem;
+  color: var(--muted);
+}
+
+.use-case-list li {
+  position: relative;
+  padding-left: 1.6rem;
+}
+
+.use-case-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--gradient-end);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.use-case-note {
+  background: rgba(0, 208, 122, 0.12);
+  padding: 0.9rem 1rem;
+  border-radius: var(--radius-sm);
+  color: var(--gradient-end);
+  font-weight: 600;
 }
 
 .seo-intro dl {
