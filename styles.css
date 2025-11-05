@@ -943,6 +943,54 @@ textarea:focus {
   display: none;
 }
 
+.article {
+  padding: 2rem 0 4rem;
+}
+
+.article .container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.article section {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--card-shadow);
+}
+
+.article section h2 {
+  margin-top: 0;
+  font-size: 1.4rem;
+}
+
+.article .article-tip {
+  border-left: 4px solid var(--gradient-end);
+}
+
+.article .article-tip a {
+  color: var(--gradient-end);
+  font-weight: 600;
+}
+
+.breadcrumb {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+
+.breadcrumb a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));

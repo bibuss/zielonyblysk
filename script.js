@@ -198,9 +198,9 @@ if (calcForm && calcResult) {
     }
 
     const baseRates = {
-      regular: 7.5,
-      deep: 9.8,
-      office: 8.4,
+      regular: 4,
+      deep: 5.2,
+      office: 4.5,
     };
 
     const frequencyMultipliers = {
