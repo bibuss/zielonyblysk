@@ -1,0 +1,33 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="leafGradient" x1="18" y1="18" x2="102" y2="102" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00D07A" />
+      <stop offset="1" stop-color="#0A8941" />
+    </linearGradient>
+    <filter id="shadow" x="0" y="0" width="140" height="140" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#0f4522" flood-opacity="0.15" />
+    </filter>
+  </defs>
+  <g filter="url(#shadow)">
+    <path
+      d="M60 12C32 24 12 54 12 78c0 17.4 14.6 30 34 30 22.1 0 38.8-16.5 38.8-41.7 0-12.9-4.6-28.1-9.8-38.7C69.4 18.2 65.4 12 60 12Z"
+      fill="url(#leafGradient)"
+    />
+    <path
+      d="M62 28c4.5 20.5-2.5 42-26 58"
+      stroke="#E5FFEF"
+      stroke-width="6"
+      stroke-linecap="round"
+    />
+  </g>
+  <g transform="translate(82 16)">
+    <circle cx="12" cy="12" r="6" fill="#00D07A" />
+    <path d="M12 0v8M12 16v8M4 12h8M16 12h8" stroke="#00D07A" stroke-width="2" stroke-linecap="round" />
+  </g>
+  <text x="60" y="98" text-anchor="middle" font-family="'Poppins', sans-serif" font-weight="700" font-size="18" fill="#0F4522">
+    ZIELONY
+  </text>
+  <text x="60" y="114" text-anchor="middle" font-family="'Poppins', sans-serif" font-weight="600" font-size="14" fill="#0F4522">
+    BŁYSK
+  </text>
+</svg>
