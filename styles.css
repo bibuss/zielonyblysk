@@ -352,8 +352,11 @@ textarea:focus {
 }
 
 .features,
+.seo-intro,
+.service-areas,
 .testimonials,
 .pricing,
+.faq,
 .contact,
 .legal {
   padding: 6rem 0;
@@ -364,8 +367,11 @@ textarea:focus {
 }
 
 .features h2,
+.seo-intro h2,
+.service-areas h2,
 .testimonials h2,
 .pricing h2,
+.faq h2,
 .contact h2,
 .legal h2 {
   text-align: center;
@@ -378,6 +384,201 @@ textarea:focus {
   color: var(--muted);
   max-width: 640px;
   margin: 0.5rem auto 3rem;
+}
+
+.seo-intro {
+  background: linear-gradient(180deg, rgba(0, 208, 122, 0.08), rgba(247, 249, 251, 0.8));
+}
+
+.seo-intro .content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.seo-intro p {
+  color: var(--muted);
+}
+
+.seo-intro ul {
+  list-style: none;
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.seo-intro ul li {
+  position: relative;
+  padding-left: 1.5rem;
+  color: var(--muted);
+}
+
+.seo-intro ul li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--gradient-end);
+  font-weight: 600;
+}
+
+.seo-intro aside {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--card-shadow);
+  display: grid;
+  gap: 1.4rem;
+}
+
+.seo-intro dl {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.seo-intro dt {
+  font-weight: 600;
+  color: var(--gradient-end);
+}
+
+.seo-intro dd {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+}
+
+.service-areas {
+  background: radial-gradient(circle at top right, rgba(0, 208, 122, 0.12), transparent 45%),
+    var(--bg);
+}
+
+.service-areas .area-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.8rem;
+  margin-top: 3rem;
+}
+
+.area-card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--card-shadow);
+  display: grid;
+  gap: 1rem;
+}
+
+.area-card h3 {
+  font-size: 1.3rem;
+}
+
+.area-card p {
+  color: var(--muted);
+}
+
+.faq {
+  background: var(--white);
+}
+
+.faq-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.8rem;
+  margin-top: 2.5rem;
+}
+
+.faq-item {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--card-shadow);
+  padding: 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.faq-item h3 {
+  font-size: 1.2rem;
+}
+
+.faq-item p {
+  color: var(--muted);
+}
+
+.legal-page {
+  padding: 6rem 0;
+}
+
+.legal-page h1 {
+  text-align: center;
+  font-size: clamp(2.2rem, 3.5vw, 2.8rem);
+  margin-bottom: 1rem;
+}
+
+.legal-page .section-lead {
+  margin-bottom: 2.5rem;
+}
+
+.legal-page .legal-grid {
+  display: grid;
+  gap: 1.6rem;
+}
+
+.legal-page .legal-grid article {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--card-shadow);
+  display: grid;
+  gap: 1rem;
+}
+
+.legal-page h2 {
+  text-align: left;
+  font-size: clamp(1.6rem, 2.6vw, 2rem);
+}
+
+.legal-page p,
+.legal-page li {
+  color: var(--muted);
+}
+
+.legal-page ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 2.5rem;
+  color: var(--gradient-end);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.subpage-hero {
+  min-height: auto;
+  padding: 2rem 0 0;
+}
+
+.subpage-hero .hero-content {
+  grid-template-columns: 1fr;
+  padding-bottom: 2rem;
+}
+
+.subpage-hero .hero-text {
+  padding-top: 2rem;
+}
+
+.subpage-hero .hero-card {
+  display: none;
 }
 
 .feature-grid {
@@ -693,6 +894,20 @@ textarea:focus {
 
   .hero-stats {
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  .seo-intro .content-grid,
+  .service-areas .area-grid,
+  .faq-list {
+    grid-template-columns: 1fr;
+  }
+
+  .seo-intro aside {
+    padding: 1.6rem;
+  }
+
+  .legal-page .legal-grid {
+    grid-template-columns: 1fr;
   }
 
   .footer-content {
