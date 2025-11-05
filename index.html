@@ -40,7 +40,7 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "CleaningService",
+        "@type": ["CleaningService", "LocalBusiness"],
         "name": "Zielony Błysk",
         "image": "https://zielonyblysk.pl/assets/logo.svg",
         "@id": "https://zielonyblysk.pl/",
@@ -54,10 +54,21 @@
           "postalCode": "33-100",
           "addressCountry": "PL"
         },
-        "areaServed": {
-          "@type": "City",
-          "name": "Tarnów"
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "50.0121",
+          "longitude": "20.9886"
         },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Tarnów"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Powiat tarnowski"
+          }
+        ],
         "openingHoursSpecification": {
           "@type": "OpeningHoursSpecification",
           "dayOfWeek": [
@@ -72,7 +83,12 @@
           "closes": "21:00"
         },
         "description": "Profesjonalne sprzątanie Tarnów – mieszkania, domy, biura i lokale usługowe z wykorzystaniem ekologicznych środków.",
-        "sameAs": []
+        "sameAs": [
+          "https://www.facebook.com/zielonyblysk",
+          "https://www.instagram.com/zielonyblysk",
+          "https://g.page/r/CZielonyBlysk",
+          "https://www.youtube.com/@zielonyblysk"
+        ]
       }
     </script>
   </head>
@@ -80,7 +96,14 @@
     <header class="hero" id="start">
       <nav class="nav">
         <div class="brand">
-          <img src="assets/logo.svg" alt="Logo Zielony Błysk" class="logo" />
+          <img
+            src="assets/logo.svg"
+            alt="Logo Zielony Błysk"
+            class="logo"
+            width="112"
+            height="112"
+            loading="eager"
+          />
           <div>
             <span class="brand-title">Zielony Błysk</span>
             <span class="brand-subtitle">Profesjonalne sprzątanie</span>
@@ -119,18 +142,35 @@
             <a class="btn primary" href="#kontakt">Umów sprzątanie</a>
             <a class="btn secondary" href="#cennik">Poznaj ofertę</a>
           </div>
-          <div class="hero-stats">
-            <div>
-              <span class="stat-number">150+</span>
+          <div class="hero-stats" aria-live="polite">
+            <div class="stat" data-target="150">
+              <span class="stat-number" aria-label="Ponad 150 stałych klientów">0</span>
+              <span class="stat-suffix">+</span>
               <span class="stat-label">Stałych klientów w Tarnowie</span>
             </div>
-            <div>
-              <span class="stat-number">98%</span>
+            <div class="stat" data-target="98">
+              <span class="stat-number" aria-label="98 procent pozytywnych opinii">0</span>
+              <span class="stat-suffix">%</span>
               <span class="stat-label">Pozytywnych opinii</span>
             </div>
-            <div>
-              <span class="stat-number">24h</span>
+            <div class="stat" data-target="24">
+              <span class="stat-number" aria-label="Reakcja w ciągu 24 godzin">0</span>
+              <span class="stat-suffix">h</span>
               <span class="stat-label">Reakcja na zgłoszenie</span>
+            </div>
+          </div>
+          <div class="trust-badges" role="list" aria-label="Gwarancje jakości">
+            <div class="badge" role="listitem">
+              <span class="material-icon" aria-hidden="true">workspace_premium</span>
+              <span>Gwarancja ponownego sprzątania 100%</span>
+            </div>
+            <div class="badge" role="listitem">
+              <span class="material-icon" aria-hidden="true">energy_savings_leaf</span>
+              <span>Tylko certyfikowane środki ECO</span>
+            </div>
+            <div class="badge" role="listitem">
+              <span class="material-icon" aria-hidden="true">videocam</span>
+              <span>Video-inspekcja przed i po usłudze</span>
             </div>
           </div>
         </div>
@@ -170,7 +210,7 @@
               <input type="hidden" name="_template" value="table" />
               <input type="hidden" name="_captcha" value="false" />
               <button type="submit" class="btn primary full">Wyślij zapytanie</button>
-              <p class="form-status" aria-live="polite"></p>
+              <p class="form-status" role="status" aria-live="polite"></p>
             </form>
           </div>
         </div>
@@ -178,6 +218,16 @@
     </header>
 
     <main>
+      <nav class="breadcrumbs" aria-label="Okruszki nawigacyjne">
+        <div class="container">
+          <ol>
+            <li><a href="#start">Start</a></li>
+            <li><a href="#uslugi">Usługi</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+          </ol>
+        </div>
+      </nav>
+
       <section class="features" id="uslugi" aria-label="Zakres usług sprzątania">
         <div class="container">
           <h2>Sprzątanie Tarnów – dlaczego warto wybrać Zielony Błysk?</h2>
@@ -216,6 +266,61 @@
                 Z nami sprzątanie biur i mieszkań w Tarnowie jest przewidywalne i skuteczne.
               </p>
             </article>
+            <article class="feature-card">
+              <div class="icon-circle">
+                <span class="material-icon">support_agent</span>
+              </div>
+              <h3>Doradca klienta 24/7</h3>
+              <p>
+                Zapewniamy dedykowanego opiekuna, który monitoruje harmonogram i reaguje na pilne
+                zgłoszenia niezależnie od dnia tygodnia.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="showcase" aria-label="Nasze realizacje przed i po">
+        <div class="container">
+          <h2>Efekt „wow” po każdym sprzątaniu</h2>
+          <p class="section-lead">
+            Dokumentujemy realizacje sprzątania mieszkań, biur i lokali usługowych w Tarnowie.
+            Zobacz, jak zmienia się przestrzeń po wizycie Zielonego Błysku.
+          </p>
+          <div class="showcase-grid">
+            <figure class="showcase-item">
+              <figcaption>Sprzątanie mieszkania – Rzędzin</figcaption>
+              <div class="before-after" aria-label="Porównanie przed i po sprzątaniu">
+                <div class="before">
+                  <span>Przed</span>
+                </div>
+                <div class="after">
+                  <span>Po</span>
+                </div>
+              </div>
+            </figure>
+            <figure class="showcase-item">
+              <figcaption>Doczyszczanie biura – Mościce</figcaption>
+              <div class="before-after" aria-label="Porównanie stanu biura">
+                <div class="before">
+                  <span>Przed</span>
+                </div>
+                <div class="after">
+                  <span>Po</span>
+                </div>
+              </div>
+            </figure>
+            <figure class="showcase-item">
+              <figcaption>Sprzątanie po remoncie – Skrzyszów</figcaption>
+              <div class="before-after" aria-label="Porównanie przestrzeni">
+                <div class="before">
+                  <span>Przed</span>
+                </div>
+                <div class="after">
+                  <span>Po</span>
+                </div>
+              </div>
+            </figure>
           </div>
         </div>
       </section>
@@ -258,8 +363,40 @@
                   <dt>Zespół mobilny</dt>
                   <dd>Dojeżdżamy do całego Tarnowa oraz gmin: Skrzyszów, Wierzchosławice i Lisia Góra.</dd>
                 </div>
+                <div>
+                  <dt>Monitoring jakości</dt>
+                  <dd>Po każdej realizacji wysyłamy raport foto-video z efektów wraz z rekomendacjami pielęgnacyjnymi.</dd>
+                </div>
               </dl>
             </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="process" aria-label="Proces współpracy">
+        <div class="container">
+          <h2>Jak pracuje Zielony Błysk?</h2>
+          <div class="process-steps">
+            <article class="process-step">
+              <span class="step-number">1</span>
+              <h3>Wywiad i mini-audyt</h3>
+              <p>Ustalamy oczekiwania, rodzaj powierzchni oraz priorytety. Przy większych obiektach wykonujemy bezpłatną inspekcję.</p>
+            </article>
+            <article class="process-step">
+              <span class="step-number">2</span>
+              <h3>Dobór zespołu i harmonogramu</h3>
+              <p>Tworzymy plan prac, delegujemy wyszkolony zespół i ustalamy kontrolną listę zadań widoczną w aplikacji klienta.</p>
+            </article>
+            <article class="process-step">
+              <span class="step-number">3</span>
+              <h3>Realizacja i kontrola jakości</h3>
+              <p>Sprzątanie realizujemy zgodnie ze standardem ISO Clean, a na końcu przesyłamy dokumentację zdjęciową i check-listę.</p>
+            </article>
+            <article class="process-step">
+              <span class="step-number">4</span>
+              <h3>Feedback i gwarancja satysfakcji</h3>
+              <p>Kontaktujemy się 24h po wizycie. Jeśli coś wymaga poprawy – wracamy bezpłatnie w ciągu 12 godzin.</p>
+            </article>
           </div>
         </div>
       </section>
@@ -300,6 +437,13 @@
                 mycie paneli fotowoltaicznych na terenie Tarnowa i okolic.
               </p>
             </article>
+          </div>
+          <div class="service-links" role="list" aria-label="Dedykowane podstrony">
+            <a role="listitem" href="#kontakt">Sprzątanie Tarnów Mościce</a>
+            <a role="listitem" href="#kontakt">Sprzątanie Tarnów Mościce – biura</a>
+            <a role="listitem" href="#kontakt">Sprzątanie Skrzyszów</a>
+            <a role="listitem" href="#kontakt">Sprzątanie Lisia Góra</a>
+            <a role="listitem" href="#kontakt">Sprzątanie Wierzchosławice</a>
           </div>
         </div>
       </section>
@@ -347,6 +491,60 @@
                 </div>
               </div>
             </article>
+            <article class="testimonial-card">
+              <p>
+                „Zamówiliśmy kompleksowe doczyszczanie kliniki medycznej. Poziom higieny spełnił wszystkie
+                normy sanitarne – to partner, któremu naprawdę ufamy.”
+              </p>
+              <div class="testimonial-author">
+                <span class="avatar">KB</span>
+                <div>
+                  <strong>Katarzyna, właścicielka kliniki</strong>
+                  <span>Wierzchosławice</span>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="testimonial-cta">
+            <a class="btn primary" href="https://g.page/r/CZielonyBlysk" target="_blank" rel="noreferrer">Dodaj opinię w Google</a>
+            <a class="btn secondary" href="#case-study">Zobacz case study</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-study" id="case-study" aria-label="Studium przypadku sprzątania">
+        <div class="container">
+          <div class="case-grid">
+            <div>
+              <h2>Case study: 1200 m² biura IT w Tarnowie</h2>
+              <p>
+                Wyzwanie klienta polegało na utrzymaniu sterylnej czystości w biurze pracującym w trybie
+                24/7. Wdrożyliśmy hybrydowy harmonogram nocnych i weekendowych wizyt wraz z czyszczeniem
+                stref serwerowych.
+              </p>
+              <ul>
+                <li>Redukcja reklamacji zgłaszanych przez pracowników o 92% w pierwszym miesiącu.</li>
+                <li>Automatyczny raport jakości – 48 punktów kontrolnych po każdej wizycie.</li>
+                <li>Wdrożenie ekologicznych środków o neutralnym zapachu zaakceptowanych przez klienta.</li>
+              </ul>
+            </div>
+            <div class="case-result">
+              <h3>Rezultaty w liczbach</h3>
+              <dl>
+                <div>
+                  <dt>12h</dt>
+                  <dd>Czas przygotowania obiektu do audytu ISO</dd>
+                </div>
+                <div>
+                  <dt>4+</dt>
+                  <dd>Dedykowane ekipy na zmianach nocnych</dd>
+                </div>
+                <div>
+                  <dt>0 incydentów</dt>
+                  <dd>Przez 18 miesięcy współpracy</dd>
+                </div>
+              </dl>
+            </div>
           </div>
         </div>
       </section>
@@ -393,6 +591,45 @@
               <a href="#kontakt" class="btn secondary full">Skontaktuj się</a>
             </article>
           </div>
+          <div class="calculator" aria-labelledby="calc-heading">
+            <div class="calculator-card">
+              <h3 id="calc-heading">Oblicz orientacyjną wycenę</h3>
+              <form class="calc-form" aria-describedby="calc-result">
+                <label>
+                  <span>Metraż (m²)</span>
+                  <input type="number" name="area" min="20" max="500" value="60" required />
+                </label>
+                <label>
+                  <span>Typ usługi</span>
+                  <select name="type">
+                    <option value="regular">Sprzątanie regularne</option>
+                    <option value="deep">Doczyszczanie po remoncie</option>
+                    <option value="office">Biuro</option>
+                  </select>
+                </label>
+                <label>
+                  <span>Częstotliwość</span>
+                  <select name="frequency">
+                    <option value="single">Jednorazowo</option>
+                    <option value="monthly">2x w miesiącu</option>
+                    <option value="weekly">Raz w tygodniu</option>
+                  </select>
+                </label>
+                <button type="submit" class="btn primary">Przelicz</button>
+              </form>
+              <p id="calc-result" class="calc-result" aria-live="polite">
+                Wprowadź dane, aby zobaczyć orientacyjną cenę.
+              </p>
+            </div>
+            <div class="calc-benefits">
+              <h3>Co zawiera wycena?</h3>
+              <ul>
+                <li>Pełną check-listę prac dopasowaną do obiektu.</li>
+                <li>Do 2 wizyt kontrolnych miesięcznie dla klientów biznesowych.</li>
+                <li>Możliwość dodatkowego ozonowania lub prania ekstrakcyjnego.</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -427,6 +664,84 @@
                 Tak, dojeżdżamy również do Skrzyszowa, Lisiej Góry, Wierzchosławic, Tuchowa i Wojnicza.
                 Podczas zamówienia poinformujemy o ewentualnych kosztach dojazdu.
               </p>
+            </article>
+            <article class="faq-item">
+              <h3>Czy oferujecie środki czystości w abonamencie?</h3>
+              <p>
+                W planach regularnych zapewniamy komplet materiałów higienicznych i ekologicznych
+                detergentów. Koszt zużycia rozliczamy w raporcie miesięcznym.
+              </p>
+            </article>
+            <article class="faq-item">
+              <h3>Jak wygląda gwarancja satysfakcji?</h3>
+              <p>
+                Jeśli w ciągu 24 godzin zgłosisz zastrzeżenia, wracamy na miejsce maksymalnie w 12 godzin
+                i wykonujemy poprawki bez dodatkowych kosztów.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="map" aria-label="Mapa dojazdu i dane lokalne">
+        <div class="container">
+          <div class="map-grid">
+            <div class="map-embed" role="presentation">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2578.037061621502!2d20.985!3d50.0121!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sZielony%20B%C5%82ysk!5e0!3m2!1spl!2spl!4v1700000000000"
+                width="100%"
+                height="360"
+                style="border:0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Mapa dojazdu do Zielony Błysk w Tarnowie"
+              ></iframe>
+            </div>
+            <div class="map-info">
+              <h2>Dane kontaktowe NAP</h2>
+              <p>
+                <strong>Zielony Błysk</strong><br />
+                ul. Zielona 12<br />
+                33-100 Tarnów
+              </p>
+              <p>
+                Telefon: <a href="tel:+48555444333">+48 555 444 333</a><br />
+                E-mail: <a href="mailto:kontakt@zielonyblysk.pl">kontakt@zielonyblysk.pl</a>
+              </p>
+              <p>Godziny otwarcia: poniedziałek – sobota 07:00 – 21:00</p>
+              <p class="map-cta">
+                <a class="btn secondary" href="https://g.page/r/CZielonyBlysk" target="_blank" rel="noreferrer"
+                  >Wyznacz trasę</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="blog" aria-label="Poradnik sprzątania">
+        <div class="container">
+          <h2>Poradnik sprzątania Tarnów</h2>
+          <p class="section-lead">
+            Regularnie dzielimy się wskazówkami dotyczącymi utrzymania czystości w domach i firmach.
+            Sprawdź najnowsze artykuły i pobierz listy kontrolne.
+          </p>
+          <div class="blog-grid">
+            <article class="blog-card">
+              <h3><a href="#kontakt">5 nawyków na lśniące mieszkanie w Tarnowie</a></h3>
+              <p>Dowiedz się, jak dzięki prostym rytuałom utrzymać porządek i skrócić sprzątanie o 40%.</p>
+              <span class="blog-meta">Poradnik domowy • 8 minut czytania</span>
+            </article>
+            <article class="blog-card">
+              <h3><a href="#kontakt">Checklista sprzątania biura do pobrania</a></h3>
+              <p>Gotowa lista kroków do kontroli jakości w biurze – do zastosowania przez office managerów.</p>
+              <span class="blog-meta">Dla firm • 5 minut czytania</span>
+            </article>
+            <article class="blog-card">
+              <h3><a href="#kontakt">Jak przygotować mieszkanie po remoncie?</a></h3>
+              <p>Opisujemy sprawdzony proces minimalizujący pylenie oraz zabezpieczający powierzchnie.</p>
+              <span class="blog-meta">Specjalistyczne • 7 minut czytania</span>
             </article>
           </div>
         </div>
@@ -480,7 +795,7 @@
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_captcha" value="false" />
             <button type="submit" class="btn primary full">Wyślij wiadomość</button>
-            <p class="form-status" aria-live="polite"></p>
+            <p class="form-status" role="status" aria-live="polite"></p>
           </form>
         </div>
       </section>
@@ -489,7 +804,14 @@
     <footer class="footer">
       <div class="container footer-content">
         <div class="brand">
-          <img src="assets/logo.svg" alt="Logo Zielony Błysk" class="logo" />
+          <img
+            src="assets/logo.svg"
+            alt="Logo Zielony Błysk"
+            class="logo"
+            width="112"
+            height="112"
+            loading="lazy"
+          />
           <div>
             <span class="brand-title">Zielony Błysk</span>
             <span class="brand-subtitle">Sprzątanie Tarnów i okolice</span>
@@ -505,5 +827,61 @@
 
     <script src="https://unpkg.com/lenis@1.0.6/dist/lenis.min.js"></script>
     <script src="script.js"></script>
+    <script type="application/ld+json" id="faq-schema">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Jak szybko możecie rozpocząć sprzątanie w Tarnowie?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Zwykle proponujemy termin w ciągu 24 godzin od zgłoszenia. W sytuacjach awaryjnych oferujemy ekspresowe sprzątanie jeszcze tego samego dnia."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Czy dostarczacie własne środki czystości?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tak, przywozimy profesjonalne, ekologiczne preparaty oraz sprzęt. Jeżeli preferujesz konkretne marki, możemy skorzystać z produktów zapewnionych przez Ciebie."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Jak rozliczane jest sprzątanie firm w Tarnowie?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Dla biznesu przygotowujemy abonament miesięczny lub rozliczenie za wizytę. Raportujemy wykonane prace oraz uzupełniamy środki higieniczne zgodnie z ustaleniami."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Czy obsługujecie okolice Tarnowa?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tak, dojeżdżamy również do Skrzyszowa, Lisiej Góry, Wierzchosławic, Tuchowa i Wojnicza. Podczas zamówienia poinformujemy o ewentualnych kosztach dojazdu."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Czy oferujecie środki czystości w abonamencie?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "W planach regularnych zapewniamy komplet materiałów higienicznych i ekologicznych detergentów. Koszt zużycia rozliczamy w raporcie miesięcznym."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Jak wygląda gwarancja satysfakcji?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Jeśli w ciągu 24 godzin zgłosisz zastrzeżenia, wracamy na miejsce maksymalnie w 12 godzin i wykonujemy poprawki bez dodatkowych kosztów."
+            }
+          }
+        ]
+      }
+    </script>
   </body>
 </html>
