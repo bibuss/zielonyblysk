@@ -111,3 +111,125 @@ forms.forEach((form) => {
     }
   });
 });
+
+const reduceMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+const stats = document.querySelectorAll('.stat');
+
+if (stats.length) {
+  const prefersReducedMotion = reduceMotionQuery.matches;
+
+  const animateStat = (stat) => {
+    const target = Number(stat.dataset.target || 0);
+    const numberElement = stat.querySelector('.stat-number');
+    const suffixElement = stat.querySelector('.stat-suffix');
+
+    if (!numberElement || Number.isNaN(target)) {
+      return;
+    }
+
+    if (prefersReducedMotion) {
+      numberElement.textContent = target;
+      if (suffixElement && suffixElement.textContent.trim() === '' && stat.dataset.suffix) {
+        suffixElement.textContent = stat.dataset.suffix;
+      }
+      return;
+    }
+
+    const duration = 1500;
+    const start = performance.now();
+
+    const step = (timestamp) => {
+      const progress = Math.min((timestamp - start) / duration, 1);
+      const current = Math.floor(progress * target);
+      numberElement.textContent = current.toString();
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        numberElement.textContent = target.toString();
+      }
+    };
+
+    requestAnimationFrame(step);
+  };
+
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateStat(entry.target);
+          obs.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  stats.forEach((stat) => observer.observe(stat));
+}
+
+const testimonialCards = document.querySelectorAll('.testimonial-card');
+
+if (testimonialCards.length > 1 && !reduceMotionQuery.matches) {
+  let activeIndex = 0;
+  testimonialCards[activeIndex].classList.add('active');
+
+  setInterval(() => {
+    testimonialCards[activeIndex].classList.remove('active');
+    activeIndex = (activeIndex + 1) % testimonialCards.length;
+    testimonialCards[activeIndex].classList.add('active');
+  }, 5000);
+}
+
+const calcForm = document.querySelector('.calc-form');
+const calcResult = document.getElementById('calc-result');
+
+if (calcForm && calcResult) {
+  calcForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(calcForm);
+    const area = Number(formData.get('area')) || 0;
+    const type = formData.get('type');
+    const frequency = formData.get('frequency');
+
+    if (!area || area < 20) {
+      calcResult.textContent = 'Podaj metraż większy niż 20 m², aby otrzymać wycenę.';
+      return;
+    }
+
+    const baseRates = {
+      regular: 7.5,
+      deep: 9.8,
+      office: 8.4,
+    };
+
+    const frequencyMultipliers = {
+      single: 1,
+      monthly: 0.94,
+      weekly: 0.88,
+    };
+
+    const visitsPerMonth = {
+      single: 1,
+      monthly: 2,
+      weekly: 4,
+    };
+
+    const baseRate = baseRates[type] || baseRates.regular;
+    const frequencyMultiplier = frequencyMultipliers[frequency] || 1;
+    const visits = visitsPerMonth[frequency] || 1;
+
+    const netPerVisit = Math.round(area * baseRate);
+    const monthlyEstimate = Math.round(netPerVisit * visits * frequencyMultiplier);
+
+    const formatter = new Intl.NumberFormat('pl-PL', {
+      style: 'currency',
+      currency: 'PLN',
+      maximumFractionDigits: 0,
+    });
+
+    calcResult.textContent = `Szacunkowa cena to ${formatter.format(netPerVisit)} za wizytę i ${formatter.format(
+      monthlyEstimate
+    )} przy wskazanej częstotliwości.`;
+  });
+}
