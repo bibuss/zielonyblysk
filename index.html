@@ -3,7 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zielony Błysk | Profesjonalne sprzątanie</title>
+    <title>Sprzątanie Tarnów | Zielony Błysk – profesjonalna firma sprzątająca</title>
+    <meta
+      name="description"
+      content="Zielony Błysk zapewnia kompleksowe sprzątanie Tarnów – mieszkania, domy, biura i lokale usługowe. Ekologiczne środki, szybkie terminy i zaufana ekipa sprzątająca."
+    />
+    <meta
+      name="keywords"
+      content="sprzątanie Tarnów, firma sprzątająca Tarnów, sprzątanie mieszkań Tarnów, sprzątanie biur Tarnów, sprzątanie po remoncie Tarnów, mycie okien Tarnów"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Zielony Błysk" />
+    <link rel="canonical" href="https://zielonyblysk.pl/" />
+    <meta property="og:title" content="Zielony Błysk – sprzątanie Tarnów" />
+    <meta
+      property="og:description"
+      content="Profesjonalne i ekologiczne sprzątanie w Tarnowie. Zamów serwis sprzątający do mieszkania, domu lub biura."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://zielonyblysk.pl/" />
+    <meta property="og:image" content="https://zielonyblysk.pl/assets/logo.svg" />
+    <meta property="og:locale" content="pl_PL" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Zielony Błysk – sprzątanie Tarnów" />
+    <meta
+      name="twitter:description"
+      content="Usługi sprzątania w Tarnowie i okolicy. Regularne porządki, sprzątanie po remoncie, mycie okien i serwis dla firm."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -11,6 +37,44 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CleaningService",
+        "name": "Zielony Błysk",
+        "image": "https://zielonyblysk.pl/assets/logo.svg",
+        "@id": "https://zielonyblysk.pl/",
+        "url": "https://zielonyblysk.pl/",
+        "telephone": "+48 555 444 333",
+        "priceRange": "PLN",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "ul. Zielona 12",
+          "addressLocality": "Tarnów",
+          "postalCode": "33-100",
+          "addressCountry": "PL"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Tarnów"
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ],
+          "opens": "07:00",
+          "closes": "21:00"
+        },
+        "description": "Profesjonalne sprzątanie Tarnów – mieszkania, domy, biura i lokale usługowe z wykorzystaniem ekologicznych środków.",
+        "sameAs": []
+      }
+    </script>
   </head>
   <body>
     <header class="hero" id="start">
@@ -34,29 +98,31 @@
         </button>
         <ul class="nav-links" id="primary-navigation">
           <li><a href="#start">Start</a></li>
+          <li><a href="#uslugi">Usługi</a></li>
           <li><a href="#opinie">Opinie</a></li>
           <li><a href="#cennik">Cennik</a></li>
+          <li><a href="#faq">FAQ</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
-          <li><a href="#polityka-prywatnosci">Polityka</a></li>
-          <li><a href="#regulamin">Regulamin</a></li>
+          <li><a href="polityka-prywatnosci.html">Polityka</a></li>
+          <li><a href="regulamin.html">Regulamin</a></li>
         </ul>
       </nav>
       <div class="hero-content">
         <div class="hero-text">
-          <h1>Nowoczesne sprzątanie dla Twojej przestrzeni</h1>
+          <h1>Profesjonalne sprzątanie Tarnów – Zielony Błysk</h1>
           <p>
-            Zielony Błysk to zespół specjalistów, którzy zadbają o nieskazitelną
-            czystość w Twoim domu, biurze i przestrzeniach komercyjnych. Ekologiczne
-            środki, precyzja i uśmiech w pakiecie.
+            Jesteśmy lokalną firmą sprzątającą z Tarnowa. Zapewniamy regularne sprzątanie
+            mieszkań i domów, utrzymanie czystości w biurach oraz sprzątanie po remoncie z
+            wykorzystaniem bezpiecznych, ekologicznych środków.
           </p>
           <div class="hero-actions">
             <a class="btn primary" href="#kontakt">Umów sprzątanie</a>
-            <a class="btn secondary" href="#cennik">Zobacz ofertę</a>
+            <a class="btn secondary" href="#cennik">Poznaj ofertę</a>
           </div>
           <div class="hero-stats">
             <div>
               <span class="stat-number">150+</span>
-              <span class="stat-label">Stałych klientów</span>
+              <span class="stat-label">Stałych klientów w Tarnowie</span>
             </div>
             <div>
               <span class="stat-number">98%</span>
@@ -93,6 +159,7 @@
                 <select name="service" required>
                   <option value="">Wybierz...</option>
                   <option>Sprzątanie mieszkania</option>
+                  <option>Sprzątanie domu</option>
                   <option>Biuro</option>
                   <option>Sprzątanie po remoncie</option>
                   <option>Mycie okien</option>
@@ -111,9 +178,13 @@
     </header>
 
     <main>
-      <section class="features" aria-label="Dlaczego warto">
+      <section class="features" id="uslugi" aria-label="Zakres usług sprzątania">
         <div class="container">
-          <h2>Dlaczego klienci wybierają Zielony Błysk?</h2>
+          <h2>Sprzątanie Tarnów – dlaczego warto wybrać Zielony Błysk?</h2>
+          <p class="section-lead">
+            Obsługujemy zarówno klientów indywidualnych, jak i firmy z Tarnowa i okolic. Wspieramy
+            sprzątanie mieszkań, domów, lokali usługowych oraz obiektów komercyjnych.
+          </p>
           <div class="feature-grid">
             <article class="feature-card">
               <div class="icon-circle">
@@ -121,8 +192,8 @@
               </div>
               <h3>Ekologiczne środki</h3>
               <p>
-                Stosujemy biodegradowalne detergenty, które są bezpieczne dla ludzi,
-                zwierząt i środowiska.
+                Stosujemy biodegradowalne detergenty bezpieczne dla dzieci, zwierząt i alergików.
+                Czystość idzie u nas w parze z troską o środowisko.
               </p>
             </article>
             <article class="feature-card">
@@ -131,8 +202,8 @@
               </div>
               <h3>Elastyczny grafik</h3>
               <p>
-                Pracujemy w godzinach, które najlepiej pasują do rytmu Twojego domu lub
-                firmy.
+                Działamy w godzinach dogodnych dla mieszkańców Tarnowa oraz przedsiębiorców. Umówimy
+                sprzątanie przed otwarciem biura lub po Twojej pracy.
               </p>
             </article>
             <article class="feature-card">
@@ -141,7 +212,92 @@
               </div>
               <h3>Sprawdzeni specjaliści</h3>
               <p>
-                Każdy członek zespołu przechodzi szkolenia oraz procedury bezpieczeństwa.
+                Każdy członek zespołu przechodzi szkolenia jakościowe i procedury bezpieczeństwa.
+                Z nami sprzątanie biur i mieszkań w Tarnowie jest przewidywalne i skuteczne.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="seo-intro" aria-label="Oferta sprzątania w Tarnowie">
+        <div class="container">
+          <div class="content-grid">
+            <div>
+              <h2>Sprzątanie Tarnów – kompleksowa oferta usług</h2>
+              <p>
+                Realizujemy regularne porządki domowe, sprzątanie mieszkań na wynajem, przygotowanie
+                nieruchomości do sprzedaży, sprzątanie po budowie oraz mycie okien w Tarnowie.
+                Dysponujemy zespołami, które sprawnie zadbają o przestrzenie prywatne i firmowe.
+              </p>
+              <ul>
+                <li>Sprzątanie mieszkań i domów jednorodzinnych na terenie Tarnowa</li>
+                <li>Utrzymanie czystości w biurach, gabinetach i lokalach usługowych</li>
+                <li>Sprzątanie po remoncie i przygotowanie inwestycji deweloperskich</li>
+                <li>Mycie okien, witryn i elewacji szklanych</li>
+                <li>Pranie tapicerki meblowej oraz odświeżanie wykładzin</li>
+              </ul>
+            </div>
+            <aside>
+              <h3>Dlaczego klienci wracają?</h3>
+              <p>
+                Zapewniamy stały zespół, jasne warunki współpracy i przejrzyste ceny. Każdy plan
+                sprzątania przygotowujemy indywidualnie – tak, aby dopasować zakres prac i częstotliwość
+                wizyt do Twoich potrzeb.
+              </p>
+              <dl>
+                <div>
+                  <dt>Sprzątanie firm Tarnów</dt>
+                  <dd>Stała obsługa biur, showroomów i lokali usługowych z raportem po każdej wizycie.</dd>
+                </div>
+                <div>
+                  <dt>Serwis porządkowy</dt>
+                  <dd>Dyżury weekendowe, doraźne sprzątanie eventów oraz wsparcie dla wspólnot mieszkaniowych.</dd>
+                </div>
+                <div>
+                  <dt>Zespół mobilny</dt>
+                  <dd>Dojeżdżamy do całego Tarnowa oraz gmin: Skrzyszów, Wierzchosławice i Lisia Góra.</dd>
+                </div>
+              </dl>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="service-areas" aria-label="Obszar działania i specjalizacje">
+        <div class="container">
+          <h2>Sprzątamy w całym Tarnowie i okolicznych miejscowościach</h2>
+          <p class="section-lead">
+            Obsługujemy dzielnice Mościce, Grabówkę, Strusin, Rzędzin oraz miejscowości przyległe. Dla
+            firm przygotowujemy pakiety na długoterminowe sprzątanie biur i hal w Tarnowie.
+          </p>
+          <div class="area-grid">
+            <article class="area-card">
+              <h3>Sprzątanie mieszkań Tarnów</h3>
+              <p>
+                Regularne i jednorazowe zlecenia, porządki po wynajmie, przygotowanie nieruchomości do
+                sprzedaży oraz gruntowne sprzątanie po przeprowadzce.
+              </p>
+            </article>
+            <article class="area-card">
+              <h3>Sprzątanie biur Tarnów</h3>
+              <p>
+                Harmonogram dopasowany do godzin pracy zespołu, czyszczenie stref wspólnych, kuchni
+                firmowych i sal konferencyjnych, uzupełnianie środków higienicznych.
+              </p>
+            </article>
+            <article class="area-card">
+              <h3>Sprzątanie po remoncie</h3>
+              <p>
+                Szybkie usuwanie pyłu budowlanego, mycie okien i detali stolarki, doczyszczanie fug,
+                posadzek oraz zabezpieczenie powierzchni na czas odbioru inwestycji.
+              </p>
+            </article>
+            <article class="area-card">
+              <h3>Usługi dodatkowe</h3>
+              <p>
+                Oferujemy ozonowanie, odświeżanie tapicerki samochodowej, czyszczenie kostki brukowej i
+                mycie paneli fotowoltaicznych na terenie Tarnowa i okolic.
               </p>
             </article>
           </div>
@@ -150,12 +306,12 @@
 
       <section class="testimonials" id="opinie">
         <div class="container">
-          <h2>Opinie naszych klientów</h2>
+          <h2>Opinie o naszym sprzątaniu w Tarnowie</h2>
           <div class="testimonial-slider">
             <article class="testimonial-card">
               <p>
-                „Zielony Błysk uratował nasze biuro przed ważną wizytą partnerów. Ekspresowy
-                termin i perfekcyjny efekt!”
+                „Zielony Błysk uratował nasze biuro przed ważną wizytą partnerów. Ekspresowy termin i
+                perfekcyjny efekt!”
               </p>
               <div class="testimonial-author">
                 <span class="avatar">AM</span>
@@ -167,8 +323,8 @@
             </article>
             <article class="testimonial-card">
               <p>
-                „Pierwszy raz spotkałam ekipę, która tak dba o szczegóły. Moje mieszkanie
-                w Tarnowie błyszczy jak nigdy!”
+                „Pierwszy raz spotkałam ekipę, która tak dba o szczegóły. Moje mieszkanie w Tarnowie
+                błyszczy jak nigdy!”
               </p>
               <div class="testimonial-author">
                 <span class="avatar">JK</span>
@@ -180,8 +336,8 @@
             </article>
             <article class="testimonial-card">
               <p>
-                „Po remoncie bałem się, że sprzątanie potrwa dni. Zielony Błysk poradził sobie
-                w jeden wieczór. Tarnów może na nich liczyć!”
+                „Po remoncie bałem się, że sprzątanie potrwa dni. Zielony Błysk poradził sobie w jeden
+                wieczór. Tarnów może na nich liczyć!”
               </p>
               <div class="testimonial-author">
                 <span class="avatar">MP</span>
@@ -197,10 +353,10 @@
 
       <section class="pricing" id="cennik">
         <div class="container">
-          <h2>Przejrzysty cennik</h2>
+          <h2>Cennik usług sprzątania Tarnów</h2>
           <p class="section-lead">
-            Ceny ustalamy indywidualnie w zależności od metrażu i zakresu prac. Poniżej
-            znajdziesz przykładowe pakiety.
+            Ceny ustalamy indywidualnie w zależności od metrażu i zakresu prac. Poniżej znajdziesz
+            przykładowe pakiety dla klientów z Tarnowa i okolic.
           </p>
           <div class="pricing-grid">
             <article class="pricing-card">
@@ -240,13 +396,49 @@
         </div>
       </section>
 
+      <section class="faq" id="faq" aria-label="Najczęstsze pytania">
+        <div class="container">
+          <h2>Sprzątanie Tarnów – najczęstsze pytania</h2>
+          <div class="faq-list">
+            <article class="faq-item">
+              <h3>Jak szybko możecie rozpocząć sprzątanie w Tarnowie?</h3>
+              <p>
+                Zwykle proponujemy termin w ciągu 24 godzin od zgłoszenia. W sytuacjach awaryjnych
+                oferujemy ekspresowe sprzątanie jeszcze tego samego dnia.
+              </p>
+            </article>
+            <article class="faq-item">
+              <h3>Czy dostarczacie własne środki czystości?</h3>
+              <p>
+                Tak, przywozimy profesjonalne, ekologiczne preparaty oraz sprzęt. Jeżeli preferujesz
+                konkretne marki, możemy skorzystać z produktów zapewnionych przez Ciebie.
+              </p>
+            </article>
+            <article class="faq-item">
+              <h3>Jak rozliczane jest sprzątanie firm w Tarnowie?</h3>
+              <p>
+                Dla biznesu przygotowujemy abonament miesięczny lub rozliczenie za wizytę. Raportujemy
+                wykonane prace oraz uzupełniamy środki higieniczne zgodnie z ustaleniami.
+              </p>
+            </article>
+            <article class="faq-item">
+              <h3>Czy obsługujecie okolice Tarnowa?</h3>
+              <p>
+                Tak, dojeżdżamy również do Skrzyszowa, Lisiej Góry, Wierzchosławic, Tuchowa i Wojnicza.
+                Podczas zamówienia poinformujemy o ewentualnych kosztach dojazdu.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section class="contact" id="kontakt">
         <div class="container">
           <div class="contact-intro">
-            <h2>Porozmawiajmy o czystości</h2>
+            <h2>Porozmawiajmy o sprzątaniu w Tarnowie</h2>
             <p>
-              Zadzwoń lub napisz, aby poznać pełną ofertę i umówić termin. Jesteśmy dostępni
-              7 dni w tygodniu.
+              Zadzwoń lub napisz, aby poznać pełną ofertę i umówić termin. Jesteśmy dostępni 7 dni w
+              tygodniu i szybko reagujemy na pilne zgłoszenia.
             </p>
             <div class="contact-details">
               <a href="tel:+48555444333" class="contact-link">
@@ -259,7 +451,7 @@
               </a>
               <div class="contact-link">
                 <span class="material-icon">location_on</span>
-                ul. Zielona 12, Warszawa
+                ul. Zielona 12, Tarnów
               </div>
             </div>
           </div>
@@ -292,99 +484,6 @@
           </form>
         </div>
       </section>
-      <section class="legal" id="polityka-prywatnosci" aria-labelledby="privacy-heading">
-        <div class="container">
-          <h2 id="privacy-heading">Polityka prywatności</h2>
-          <p>
-            Dbamy o bezpieczeństwo danych osobowych przekazywanych nam podczas korzystania z
-            formularzy. Wszystkie informacje wykorzystujemy wyłącznie w celu obsługi zapytań i
-            świadczenia usług Zielonego Błysku.
-          </p>
-          <div class="legal-grid">
-            <article>
-              <h3>Administrator danych</h3>
-              <p>
-                Administratorem danych jest Zielony Błysk z siedzibą przy ul. Zielonej 12 w Warszawie.
-                Z administratorem można skontaktować się pod adresem
-                <a href="mailto:kontakt@zielonyblysk.pl">kontakt@zielonyblysk.pl</a>.
-              </p>
-            </article>
-            <article>
-              <h3>Zakres i cel przetwarzania</h3>
-              <p>
-                Przetwarzamy dane podane w formularzach kontaktowych i wycen w celu udzielenia
-                odpowiedzi, przygotowania oferty oraz realizacji zamówionych usług. Dane mogą być
-                przechowywane w naszej skrzynce pocztowej do momentu zakończenia współpracy lub na
-                żądanie osoby, która je przekazała.
-              </p>
-            </article>
-            <article>
-              <h3>Prawa osób</h3>
-              <p>
-                Każda osoba ma prawo dostępu do swoich danych, ich sprostowania, usunięcia,
-                ograniczenia przetwarzania oraz wniesienia sprzeciwu. Wszelkie żądania prosimy
-                kierować na adres e-mail wskazany powyżej.
-              </p>
-            </article>
-            <article>
-              <h3>Zabezpieczenia</h3>
-              <p>
-                Korzystamy ze sprawdzonych usług hostingowych i szyfrowanych formularzy, aby zapewnić
-                jak najwyższy poziom bezpieczeństwa. Nie przekazujemy danych osobom trzecim bez zgody
-                użytkownika, chyba że wymagają tego przepisy prawa.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="legal" id="regulamin" aria-labelledby="terms-heading">
-        <div class="container">
-          <h2 id="terms-heading">Regulamin świadczenia usług</h2>
-          <div class="legal-grid">
-            <article>
-              <h3>Zakres usług</h3>
-              <p>
-                Oferujemy profesjonalne usługi sprzątania mieszkań, domów i biur. Szczegółowy zakres
-                prac oraz harmonogram ustalany jest indywidualnie na podstawie informacji podanych w
-                formularzu lub podczas rozmowy telefonicznej.
-              </p>
-            </article>
-            <article>
-              <h3>Rezerwacja i płatności</h3>
-              <p>
-                Potwierdzeniem rezerwacji jest akceptacja przygotowanej wyceny. Płatność odbywa się na
-                podstawie faktury lub rachunku wystawionego po zakończeniu usługi, zgodnie z uzgodnionym
-                terminem.
-              </p>
-            </article>
-            <article>
-              <h3>Zmiany terminu i odwołanie</h3>
-              <p>
-                Termin realizacji można zmienić lub odwołać bez dodatkowych kosztów najpóźniej 24 godziny
-                przed umówioną wizytą. W przypadku późniejszego odwołania zastrzegamy możliwość naliczenia
-                opłaty za przygotowanie zespołu.
-              </p>
-            </article>
-            <article>
-              <h3>Reklamacje</h3>
-              <p>
-                Jeżeli zauważysz uchybienia w jakości usług, poinformuj nas w ciągu 24 godzin od ich
-                wykonania. Dokonamy poprawek w najkrótszym możliwym terminie lub zaproponujemy inne
-                rozwiązanie satysfakcjonujące klienta.
-              </p>
-            </article>
-            <article>
-              <h3>Postanowienia końcowe</h3>
-              <p>
-                Korzystając z naszych usług, akceptujesz warunki niniejszego regulaminu. W sprawach
-                nieuregulowanych obowiązują przepisy prawa polskiego. Regulamin wchodzi w życie z dniem
-                publikacji na stronie.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
     </main>
 
     <footer class="footer">
@@ -393,13 +492,13 @@
           <img src="assets/logo.svg" alt="Logo Zielony Błysk" class="logo" />
           <div>
             <span class="brand-title">Zielony Błysk</span>
-            <span class="brand-subtitle">Czystość, która zostaje na dłużej</span>
+            <span class="brand-subtitle">Sprzątanie Tarnów i okolice</span>
           </div>
         </div>
         <p>© <span id="year"></span> Zielony Błysk. Wszelkie prawa zastrzeżone.</p>
         <div class="footer-links">
-          <a href="#polityka-prywatnosci">Polityka prywatności</a>
-          <a href="#regulamin">Regulamin</a>
+          <a href="polityka-prywatnosci.html">Polityka prywatności</a>
+          <a href="regulamin.html">Regulamin</a>
         </div>
       </div>
     </footer>
