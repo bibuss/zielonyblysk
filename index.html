@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zielony Błysk | Profesjonalne sprzątanie</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero" id="start">
+      <nav class="nav">
+        <div class="brand">
+          <img src="assets/logo.svg" alt="Logo Zielony Błysk" class="logo" />
+          <div>
+            <span class="brand-title">Zielony Błysk</span>
+            <span class="brand-subtitle">Profesjonalne sprzątanie</span>
+          </div>
+        </div>
+        <button
+          class="nav-toggle"
+          aria-label="Otwórz menu"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-links" id="primary-navigation">
+          <li><a href="#start">Start</a></li>
+          <li><a href="#opinie">Opinie</a></li>
+          <li><a href="#cennik">Cennik</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Nowoczesne sprzątanie dla Twojej przestrzeni</h1>
+          <p>
+            Zielony Błysk to zespół specjalistów, którzy zadbają o nieskazitelną
+            czystość w Twoim domu, biurze i przestrzeniach komercyjnych. Ekologiczne
+            środki, precyzja i uśmiech w pakiecie.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#kontakt">Umów sprzątanie</a>
+            <a class="btn secondary" href="#cennik">Zobacz ofertę</a>
+          </div>
+          <div class="hero-stats">
+            <div>
+              <span class="stat-number">150+</span>
+              <span class="stat-label">Stałych klientów</span>
+            </div>
+            <div>
+              <span class="stat-number">98%</span>
+              <span class="stat-label">Pozytywnych opinii</span>
+            </div>
+            <div>
+              <span class="stat-number">24h</span>
+              <span class="stat-label">Reakcja na zgłoszenie</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="card">
+            <h2>Bezpłatna wycena</h2>
+            <p>Opowiedz nam o swojej przestrzeni. Oddzwonimy w 15 minut.</p>
+            <form
+              class="quote-form"
+              data-form="quote"
+              data-endpoint="https://jsonplaceholder.typicode.com/posts"
+              data-success-message="Dziękujemy! Oddzwonimy w ciągu 15 minut."
+              data-error-message="Nie udało się wysłać zapytania. Spróbuj ponownie."
+            >
+              <label>
+                <span>Imię</span>
+                <input type="text" name="name" placeholder="Anna" required />
+              </label>
+              <label>
+                <span>Telefon</span>
+                <input type="tel" name="phone" placeholder="+48 123 456 789" required />
+              </label>
+              <label>
+                <span>Rodzaj usługi</span>
+                <select name="service" required>
+                  <option value="">Wybierz...</option>
+                  <option>Sprzątanie mieszkania</option>
+                  <option>Biuro</option>
+                  <option>Sprzątanie po remoncie</option>
+                  <option>Mycie okien</option>
+                </select>
+              </label>
+              <button type="submit" class="btn primary full">Wyślij zapytanie</button>
+              <p class="form-status" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="features" aria-label="Dlaczego warto">
+        <div class="container">
+          <h2>Dlaczego klienci wybierają Zielony Błysk?</h2>
+          <div class="feature-grid">
+            <article class="feature-card">
+              <div class="icon-circle">
+                <span class="material-icon">eco</span>
+              </div>
+              <h3>Ekologiczne środki</h3>
+              <p>
+                Stosujemy biodegradowalne detergenty, które są bezpieczne dla ludzi,
+                zwierząt i środowiska.
+              </p>
+            </article>
+            <article class="feature-card">
+              <div class="icon-circle">
+                <span class="material-icon">schedule</span>
+              </div>
+              <h3>Elastyczny grafik</h3>
+              <p>
+                Pracujemy w godzinach, które najlepiej pasują do rytmu Twojego domu lub
+                firmy.
+              </p>
+            </article>
+            <article class="feature-card">
+              <div class="icon-circle">
+                <span class="material-icon">verified</span>
+              </div>
+              <h3>Sprawdzeni specjaliści</h3>
+              <p>
+                Każdy członek zespołu przechodzi szkolenia oraz procedury bezpieczeństwa.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials" id="opinie">
+        <div class="container">
+          <h2>Opinie naszych klientów</h2>
+          <div class="testimonial-slider">
+            <article class="testimonial-card">
+              <p>
+                „Zielony Błysk uratował nasze biuro przed ważną wizytą partnerów. Ekspresowy
+                termin i perfekcyjny efekt!”
+              </p>
+              <div class="testimonial-author">
+                <span class="avatar">AM</span>
+                <div>
+                  <strong>Anna, managerka biura</strong>
+                  <span>Warszawa</span>
+                </div>
+              </div>
+            </article>
+            <article class="testimonial-card">
+              <p>
+                „Pierwszy raz spotkałam ekipę, która tak dba o szczegóły. Moje mieszkanie
+                błyszczy jak nigdy!”
+              </p>
+              <div class="testimonial-author">
+                <span class="avatar">JK</span>
+                <div>
+                  <strong>Julia, właścicielka mieszkania</strong>
+                  <span>Kraków</span>
+                </div>
+              </div>
+            </article>
+            <article class="testimonial-card">
+              <p>
+                „Po remoncie bałem się, że sprzątanie potrwa dni. Zielony Błysk poradził sobie
+                w jeden wieczór. Polecam!”
+              </p>
+              <div class="testimonial-author">
+                <span class="avatar">MP</span>
+                <div>
+                  <strong>Michał, właściciel firmy</strong>
+                  <span>Gdańsk</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="pricing" id="cennik">
+        <div class="container">
+          <h2>Przejrzysty cennik</h2>
+          <p class="section-lead">
+            Ceny ustalamy indywidualnie w zależności od metrażu i zakresu prac. Poniżej
+            znajdziesz przykładowe pakiety.
+          </p>
+          <div class="pricing-grid">
+            <article class="pricing-card">
+              <h3>Standard</h3>
+              <p class="price"><span>od</span> 199 zł</p>
+              <ul>
+                <li>Sprzątanie mieszkania do 50 m²</li>
+                <li>Odkurzanie i mycie podłóg</li>
+                <li>Łazienka i kuchnia</li>
+                <li>Okna wewnętrzne</li>
+              </ul>
+              <a href="#kontakt" class="btn secondary full">Wybierz pakiet</a>
+            </article>
+            <article class="pricing-card highlight">
+              <h3>Premium</h3>
+              <p class="price"><span>od</span> 349 zł</p>
+              <ul>
+                <li>Mieszkanie lub dom do 120 m²</li>
+                <li>Sprzątanie po imprezie lub remoncie</li>
+                <li>Pranie tapicerek</li>
+                <li>Mycie piekarnika i lodówki</li>
+              </ul>
+              <a href="#kontakt" class="btn primary full">Najczęstszy wybór</a>
+            </article>
+            <article class="pricing-card">
+              <h3>Biznes</h3>
+              <p class="price"><span>od</span> 599 zł</p>
+              <ul>
+                <li>Biura i przestrzenie komercyjne</li>
+                <li>Dopasowany harmonogram</li>
+                <li>Opieka koordynatora</li>
+                <li>Dedykowany zespół</li>
+              </ul>
+              <a href="#kontakt" class="btn secondary full">Skontaktuj się</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="kontakt">
+        <div class="container">
+          <div class="contact-intro">
+            <h2>Porozmawiajmy o czystości</h2>
+            <p>
+              Zadzwoń lub napisz, aby poznać pełną ofertę i umówić termin. Jesteśmy dostępni
+              7 dni w tygodniu.
+            </p>
+            <div class="contact-details">
+              <a href="tel:+48555444333" class="contact-link">
+                <span class="material-icon">call</span>
+                +48 555 444 333
+              </a>
+              <a href="mailto:kontakt@zielonyblysk.pl" class="contact-link">
+                <span class="material-icon">mail</span>
+                kontakt@zielonyblysk.pl
+              </a>
+              <div class="contact-link">
+                <span class="material-icon">location_on</span>
+                ul. Zielona 12, Warszawa
+              </div>
+            </div>
+          </div>
+          <form
+            class="contact-form"
+            data-form="contact"
+            data-endpoint="https://jsonplaceholder.typicode.com/posts"
+            data-success-message="Dziękujemy! Wkrótce się odezwiemy."
+            data-error-message="Nie udało się wysłać wiadomości. Sprawdź połączenie i spróbuj ponownie."
+          >
+            <label>
+              <span>Imię i nazwisko</span>
+              <input type="text" name="fullname" placeholder="Jan Kowalski" required />
+            </label>
+            <label>
+              <span>Adres e-mail</span>
+              <input type="email" name="email" placeholder="twoj@email.pl" required />
+            </label>
+            <label>
+              <span>Wiadomość</span>
+              <textarea name="message" rows="5" placeholder="Opisz swoje potrzeby" required></textarea>
+            </label>
+            <button type="submit" class="btn primary full">Wyślij wiadomość</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-content">
+        <div class="brand">
+          <img src="assets/logo.svg" alt="Logo Zielony Błysk" class="logo" />
+          <div>
+            <span class="brand-title">Zielony Błysk</span>
+            <span class="brand-subtitle">Czystość, która zostaje na dłużej</span>
+          </div>
+        </div>
+        <p>© <span id="year"></span> Zielony Błysk. Wszelkie prawa zastrzeżone.</p>
+        <div class="footer-links">
+          <a href="#start">Polityka prywatności</a>
+          <a href="#start">Regulamin</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/lenis@1.0.6/dist/lenis.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
