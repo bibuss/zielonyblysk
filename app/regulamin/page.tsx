@@ -1,0 +1,1 @@
+export default function Page(){return <main className='section'><div className='container max-w-4xl'><h1 className='h2'>Regulamin</h1><p className='mt-4'>Regulamin świadczenia usług i warunki współpracy do uzupełnienia.</p></div></main>}

@@ -1,0 +1,1 @@
+export default function Page(){return <main className='section'><div className='container max-w-4xl'><h1 className='h2'>Polityka prywatności</h1><p className='mt-4'>Treść polityki prywatności i klauzuli RODO do uzupełnienia przez administratora danych.</p></div></main>}
