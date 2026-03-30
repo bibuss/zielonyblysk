@@ -1,15 +1,15 @@
 const beforeAfterProjects = [
   {
     title: 'Sprzątanie mieszkania – Rzędzin',
-    image: '/assets/realizacje/kuchnia-przed-po.svg'
+    image: '/assets/realizacje/1.png'
   },
   {
     title: 'Odgracanie salonu – Mościce',
-    image: '/assets/realizacje/salon-przed-po.svg'
+    image: '/assets/realizacje/2.png'
   },
   {
     title: 'Sprzątanie po remoncie – Skrzyszów',
-    image: '/assets/realizacje/sypialnia-przed-po.svg'
+    image: '/assets/realizacje/3.png'
   }
 ];
 
