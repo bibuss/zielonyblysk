@@ -1,17 +1,14 @@
 const beforeAfterProjects = [
   {
-    title: 'Kuchnia po remoncie – Tarnów',
-    description: 'Usunięcie pyłu budowlanego, odpadów i doczyszczenie zabudowy kuchennej.',
+    title: 'Sprzątanie mieszkania – Rzędzin',
     image: '/assets/realizacje/kuchnia-przed-po.svg'
   },
   {
-    title: 'Salon po imprezie – Mościce',
-    description: 'Kompleksowe sprzątanie salonu, mycie podłogi i odświeżenie strefy wypoczynkowej.',
+    title: 'Doczyszczanie biura – Mościce',
     image: '/assets/realizacje/salon-przed-po.svg'
   },
   {
-    title: 'Sypialnia przed wynajmem – Tuchów',
-    description: 'Przygotowanie pokoju do przekazania najemcy: porządek, aranżacja i efekt premium.',
+    title: 'Sprzątanie po remoncie – Skrzyszów',
     image: '/assets/realizacje/sypialnia-przed-po.svg'
   }
 ];
@@ -20,17 +17,22 @@ export default function RealizacjePage() {
   return (
     <main className="section">
       <div className="container">
-        <h1 className="h2">Realizacje</h1>
-        <p className="mt-3 max-w-3xl text-slate-600">Zobacz rzeczywiste efekty naszych usług w układzie „przed i po”.</p>
+        <h1 className="h2 max-w-3xl">Efekt „wow” po każdym sprzątaniu</h1>
+        <p className="mt-5 max-w-4xl text-2xl leading-relaxed text-slate-600 md:ml-24">
+          Dokumentujemy realizacje sprzątania mieszkań, biur i lokali usługowych w Tarnowie. Zobacz, jak zmienia
+          się przestrzeń po wizycie Zielonego Błysku.
+        </p>
 
-        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {beforeAfterProjects.map((project) => (
-            <article key={project.title} className="card overflow-hidden p-0">
-              <img src={project.image} alt={`Realizacja przed i po: ${project.title}`} className="h-auto w-full" loading="lazy" />
-              <div className="p-6">
-                <p className="font-semibold">{project.title}</p>
-                <p className="mt-2 text-sm text-slate-600">{project.description}</p>
-              </div>
+            <article key={project.title} className="card border-0 bg-slate-100 p-9 shadow-none">
+              <h2 className="text-4xl font-semibold leading-tight tracking-tight text-slate-900">{project.title}</h2>
+              <img
+                src={project.image}
+                alt={`Realizacja przed i po: ${project.title}`}
+                className="mt-8 h-auto w-full rounded-[28px]"
+                loading="lazy"
+              />
             </article>
           ))}
         </div>
