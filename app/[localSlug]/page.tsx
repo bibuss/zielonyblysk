@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { FullLeadForm } from '@/components/LeadForm';
 import { JsonLd } from '@/components/JsonLd';
+import { AreaCoverageSection } from '@/components/AreaCoverageSection';
 import { company, localSeoPages, top10SeoLocations } from '@/lib/site-data';
 
 export function generateStaticParams() {
@@ -93,6 +94,20 @@ export default function LocalSeoPage({ params }: { params: { localSlug: string }
             </div>
           </section>
 
+
+          <section className="mt-8">
+            <h2 className="h3">Dla kogo jest usługa w {page.city}</h2>
+            <div className="mt-4 grid gap-4 md:grid-cols-3">
+              {page.audienceSections.map((item) => (
+                <article className="card" key={item.segment}>
+                  <h3 className="font-semibold">{item.segment}</h3>
+                  <p className="mt-2 text-sm text-slate-700"><strong>Problem:</strong> {item.pain}</p>
+                  <p className="mt-2 text-sm text-slate-700"><strong>Korzyść:</strong> {item.value}</p>
+                </article>
+              ))}
+            </div>
+          </section>
+
           {page.longSections.map((section) => (
             <section key={section.title} className="mt-10">
               <h2 className="h3">{section.title}</h2>
@@ -110,10 +125,7 @@ export default function LocalSeoPage({ params }: { params: { localSlug: string }
             ))}
           </section>
 
-          <section className="mt-10">
-            <h2 className="h3">Obszar działania</h2>
-            <p className="mt-3 text-slate-700">Poza {page.city} dojeżdżamy regularnie do: {page.areaCoverage.join(', ')}.</p>
-          </section>
+          <AreaCoverageSection city={page.city} around={page.areaCoverage} />
 
           <section className="mt-10">
             <h2 className="h3">Inne lokalizacje</h2>
