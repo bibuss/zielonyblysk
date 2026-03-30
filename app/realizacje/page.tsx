@@ -4,7 +4,7 @@ const beforeAfterProjects = [
     image: '/assets/realizacje/kuchnia-przed-po.svg'
   },
   {
-    title: 'Doczyszczanie biura – Mościce',
+    title: 'Odgracanie salonu – Mościce',
     image: '/assets/realizacje/salon-przed-po.svg'
   },
   {
