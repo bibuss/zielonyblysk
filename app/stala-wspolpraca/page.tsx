@@ -1,0 +1,2 @@
+import { FullLeadForm } from '@/components/LeadForm';
+export default function Page(){return <main className='section'><div className='container grid gap-8 lg:grid-cols-2'><div><h1 className='h2'>Stała współpraca / abonament / kontrakty</h1><p className='mt-4 text-slate-700'>Pakiety Standard, Premium, Biznes i Wspólnoty. Rozliczenie miesięczne, stałe terminy i opiekun klienta.</p></div><FullLeadForm/></div></main>}

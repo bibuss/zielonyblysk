@@ -1,0 +1,2 @@
+import { FullLeadForm } from '@/components/LeadForm';
+export default function Page(){return <main className='section'><div className='container grid gap-8 lg:grid-cols-2'><div><h1 className='h2'>Dla klientów indywidualnych</h1><p className='mt-4 text-slate-700'>Sprzątanie mieszkań i domów, regularnie lub jednorazowo. Idealne dla rodzin, seniorów i właścicieli mieszkań na wynajem.</p></div><FullLeadForm/></div></main>}
