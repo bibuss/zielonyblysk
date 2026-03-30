@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
-import Script from 'next/script';
 import './globals.css';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { StickyCTA } from '@/components/StickyCTA';
 import { JsonLd } from '@/components/JsonLd';
+import { TrackingScripts } from '@/components/TrackingScripts';
 import { company } from '@/lib/site-data';
 
 export const metadata: Metadata = {
@@ -46,9 +46,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pl">
       <body>
-        <Script id="analytics-readiness" strategy="afterInteractive">
-          {`window.dataLayer = window.dataLayer || []; window.__tracking_ready = true;`}
-        </Script>
+        <TrackingScripts />
         <Header />
         {children}
         <Footer />

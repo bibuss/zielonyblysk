@@ -106,9 +106,11 @@ export type LocalSeoPage = {
   localFaq: FAQ[];
   areaCoverage: string[];
   audience: string[];
+  audienceSections: { segment: string; pain: string; value: string }[];
   services: string[];
   cta: string;
   longSections: { title: string; content: string }[];
+  nearbyLocations: string[];
 };
 
 const topLocations = [
@@ -204,9 +206,15 @@ export const localSeoPages: LocalSeoPage[] = [...topLocations, ...additionalLoca
     ],
     areaCoverage: related,
     audience: ['Dom i mieszkanie', 'Firma i biuro', 'Wspólnota i zarządca'],
+    audienceSections: [
+      { segment: 'Dom / mieszkanie', pain: `Brak czasu na porządki i potrzeba szybkiego efektu w ${loc.city}.`, value: 'Jeden kontakt, jasna wycena i wygodny termin.' },
+      { segment: 'Firma / biuro', pain: `Nierówny standard czystości i ryzyko gorszego odbioru marki w ${loc.city}.`, value: 'Stały harmonogram, raportowanie i faktura VAT.' },
+      { segment: 'Wspólnota / zarządca', pain: `Skargi mieszkańców na części wspólne i brak regularności serwisu w ${loc.city}.`, value: 'Powtarzalny standard, zdjęcia po realizacji i interwencje.' }
+    ],
     services: ['sprzątanie mieszkań', 'sprzątanie po remoncie', 'sprzątanie biur', 'sprzątanie wspólnot'],
     cta: `Umów sprzątanie w ${loc.city}`,
-    longSections: longSectionTemplate(loc.city, loc.travelTime)
+    longSections: longSectionTemplate(loc.city, loc.travelTime),
+    nearbyLocations: related
   };
 });
 
@@ -218,7 +226,6 @@ export const adLandingPages = [
   { slug: 'sprzatanie-biur-tarnow', keyword: 'sprzątanie biur Tarnów', usp: 'Stały standard czystości i faktura VAT.' },
   { slug: 'sprzatanie-wspolnot-tarnow', keyword: 'sprzątanie wspólnot Tarnów', usp: 'Regularna obsługa części wspólnych i raport wykonania.' },
   { slug: 'firma-sprzatajaca-tarnow', keyword: 'firma sprzątająca Tarnów', usp: 'Jedna firma do domu, biura i wspólnoty.' },
-  { slug: 'sprzatanie-tarnow-cennik', keyword: 'sprzątanie Tarnów cennik', usp: 'Cennik od, bez ukrytych kosztów, szybka wycena.' }
 ];
 
 export const siteFaq: FAQ[] = [
