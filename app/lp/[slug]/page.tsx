@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { QuickLeadForm } from '@/components/LeadForm';
-import { adLandingPages, company, testimonials } from '@/lib/site-data';
+import { adLandingPages, beforeAfterCases, company, siteFaq, testimonials } from '@/lib/site-data';
 
 export function generateStaticParams() { return adLandingPages.map((l) => ({ slug: l.slug })); }
 
@@ -35,11 +35,21 @@ export default function LandingPage({ params }: { params: { slug: string } }) {
             </ul>
           </div>
           <div className="mt-4 card"><h2 className="font-semibold">Orientacyjny cennik</h2><p className="mt-2 text-sm">Ceny zaczynają się od 180 zł. Finalna wycena zależy od metrażu, stopnia zabrudzeń, terminu i zakresu.</p></div>
+          <div className="mt-4 card">
+            <h2 className="font-semibold">Before / After</h2>
+            {beforeAfterCases.slice(0, 2).map((item) => (
+              <p key={item.id} className="mt-2 text-sm"><strong>{item.title}:</strong> {item.result}</p>
+            ))}
+          </div>
           <div className="mt-4 card"><h2 className="font-semibold">Sekcja lokalna</h2><p className="mt-2 text-sm">Działamy w Tarnowie, Mościcach, Skrzyszowie, Wierzchosławicach, Lisiej Górze, Żabnie, Tuchowie, Wojniczu i Pleśnej.</p></div>
 
           <div className="mt-4 card">
             <h2 className="font-semibold">Opinie</h2>
             {testimonials.slice(0, 2).map((op)=><p key={op.name} className="mt-2 text-sm">★ {op.text} — {op.name}</p>)}
+          </div>
+          <div className="mt-4 card">
+            <h2 className="font-semibold">FAQ</h2>
+            {siteFaq.slice(0, 3).map((item) => <p key={item.q} className="mt-2 text-sm"><strong>{item.q}</strong><br />{item.a}</p>)}
           </div>
         </article>
         <div id="formularz"><QuickLeadForm /></div>

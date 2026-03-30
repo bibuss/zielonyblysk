@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { QuickLeadForm, FullLeadForm } from '@/components/LeadForm';
 import { JsonLd } from '@/components/JsonLd';
-import { beforeAfterCases, company, locations, pricingTables, segmentPages, services, siteFaq, testimonials } from '@/lib/site-data';
+import { beforeAfterCases, company, localSeoPages, pricingTables, segmentPages, services, siteFaq, testimonials } from '@/lib/site-data';
 
 export default function HomePage() {
   const faqSchema = {
@@ -16,7 +16,7 @@ export default function HomePage() {
         <div className="container grid gap-8 lg:grid-cols-2">
           <div>
             <p className="mb-3 inline-flex rounded-full bg-white px-3 py-1 text-xs font-semibold text-brand-700 ring-1 ring-brand-200">Lokalna firma sprzątająca • Tarnów i okolice do 30 km</p>
-            <h1 className="text-4xl font-bold tracking-tight md:text-6xl">Sprzątanie Tarnów: mieszkania, firmy, wspólnoty i zlecenia po remoncie</h1>
+            <h1 className="text-4xl font-bold tracking-tight md:text-6xl">Sprzątanie Tarnów + 30 km: mieszkania, firmy, wspólnoty i zlecenia po remoncie</h1>
             <p className="mt-4 text-lg text-slate-700">Szybki kontakt, uczciwa wycena i czytelne warunki współpracy. Jednorazowo lub cyklicznie — dla domu, biznesu i wspólnot.</p>
             <div className="mt-6 flex flex-wrap gap-3">
               <a className="btn-primary" href={company.phoneHref} data-track="cta_phone_hero">Zadzwoń teraz</a>
@@ -60,7 +60,7 @@ export default function HomePage() {
 
       <section className="section bg-white"><div className="container"><h2 className="h2">FAQ</h2><div className="mt-6 grid gap-3">{siteFaq.map((item)=><details key={item.q} className="card"><summary className="cursor-pointer font-semibold">{item.q}</summary><p className="mt-2 text-sm text-slate-600">{item.a}</p></details>)}</div></div></section>
 
-      <section className="section"><div className="container grid gap-8 lg:grid-cols-2"><div className="card"><h2 className="h2">Działamy w Tarnowie i do 30 km</h2><p className="mt-3 text-slate-700">Obsługujemy: {locations.map((l) => l.name).join(', ')} i kolejne miejscowości po stronie południowej i północnej Tarnowa.</p><div className="mt-4 flex flex-wrap gap-2">{locations.map((l)=><Link key={l.slug} className="rounded-full bg-brand-50 px-3 py-1 text-sm text-brand-700" href={`/lokalizacje/${l.slug}`}>{l.name}</Link>)}</div></div><div id="formularz"><FullLeadForm /></div></div></section>
+      <section className="section"><div className="container grid gap-8 lg:grid-cols-2"><div className="card"><h2 className="h2">Działamy w Tarnowie i do 30 km</h2><p className="mt-3 text-slate-700">Obsługujemy ponad 30 miejscowości i budujemy lokalne landingi SEO pod frazy „sprzątanie + miejscowość”.</p><div className="mt-4 flex flex-wrap gap-2">{localSeoPages.slice(0, 20).map((l)=><Link key={l.slug} className="rounded-full bg-brand-50 px-3 py-1 text-sm text-brand-700" href={`/${l.slug}`}>{l.city}</Link>)}</div></div><div id="formularz"><FullLeadForm /></div></div></section>
 
       <section className="section bg-brand-700 text-white"><div className="container text-center"><h2 className="h2 text-white">Potrzebujesz szybkiej wyceny?</h2><p className="mx-auto mt-3 max-w-2xl text-brand-100">Zadzwoń lub zostaw formularz. Otrzymasz konkretny koszt i najbliższy dostępny termin.</p><div className="mt-6 flex flex-wrap justify-center gap-3"><a className="btn-secondary" href={company.phoneHref}>Zadzwoń teraz</a><a className="btn-primary bg-white text-brand-700 hover:bg-brand-50" href="#formularz">Darmowa wycena</a></div></div></section>
       <JsonLd data={faqSchema} />

@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next';
-import { adLandingPages, blogPosts, locations, segmentPages, services } from '@/lib/site-data';
+import { adLandingPages, blogPosts, localSeoPages, locations, segmentPages, services } from '@/lib/site-data';
 
 const base = 'https://zielonyblysk.pl';
 
@@ -8,7 +8,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...staticPages.map((path) => ({ url: `${base}${path}`, priority: 0.9 })),
     ...services.map((s) => ({ url: `${base}/uslugi/${s.slug}`, priority: 0.8 })),
-    ...locations.map((l) => ({ url: `${base}/lokalizacje/${l.slug}`, priority: 0.8 })),
+    ...locations.map((l) => ({ url: `${base}/lokalizacje/${l.slug}`, priority: 0.6 })),
+    ...localSeoPages.map((l) => ({ url: `${base}/${l.slug}`, priority: 0.85 })),
     ...adLandingPages.map((l) => ({ url: `${base}/lp/${l.slug}`, priority: 0.8 })),
     ...segmentPages.map((s) => ({ url: `${base}/${s.slug}`, priority: 0.8 })),
     ...blogPosts.map((post) => ({ url: `${base}/blog/${post.slug}`, priority: 0.7 }))
