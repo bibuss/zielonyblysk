@@ -65,14 +65,152 @@ export const locations = [
   { slug: 'tarnow', name: 'Tarnów' },
   { slug: 'moscice', name: 'Mościce' },
   { slug: 'skrzyszow', name: 'Skrzyszów' },
-  { slug: 'wierzchoslawice', name: 'Wierzchosławice' },
-  { slug: 'lisia-gora', name: 'Lisia Góra' },
-  { slug: 'zabno', name: 'Żabno' },
   { slug: 'tuchow', name: 'Tuchów' },
+  { slug: 'zabno', name: 'Żabno' },
+  { slug: 'lisia-gora', name: 'Lisia Góra' },
+  { slug: 'wierzchoslawice', name: 'Wierzchosławice' },
   { slug: 'wojnicz', name: 'Wojnicz' },
   { slug: 'plesna', name: 'Pleśna' },
-  { slug: 'okolice-tarnowa', name: 'Okolice Tarnowa' }
+  { slug: 'dabrowa-tarnowska', name: 'Dąbrowa Tarnowska' },
+  { slug: 'ryglice', name: 'Ryglice' },
+  { slug: 'szerzyny', name: 'Szerzyny' },
+  { slug: 'radlow', name: 'Radłów' },
+  { slug: 'olesno', name: 'Olesno' },
+  { slug: 'szczucin', name: 'Szczucin' },
+  { slug: 'ciezkowice', name: 'Ciężkowice' },
+  { slug: 'zakliczyn', name: 'Zakliczyn' },
+  { slug: 'gromnik', name: 'Gromnik' },
+  { slug: 'czarna', name: 'Czarna' },
+  { slug: 'borzecin', name: 'Borzęcin' },
+  { slug: 'brzesko', name: 'Brzesko' },
+  { slug: 'debno', name: 'Dębno' },
+  { slug: 'wola-rzedzinska', name: 'Wola Rzędzińska' },
+  { slug: 'zglobice', name: 'Zgłobice' },
+  { slug: 'koszyce-male', name: 'Koszyce Małe' },
+  { slug: 'koszyce-wielkie', name: 'Koszyce Wielkie' },
+  { slug: 'ladna', name: 'Ładna' },
+  { slug: 'jodlowka-walki', name: 'Jodłówka-Wałki' },
+  { slug: 'pogorska-wola', name: 'Pogórska Wola' },
+  { slug: 'zbylitowska-gora', name: 'Zbylitowska Góra' }
 ];
+
+export type LocalSeoPage = {
+  slug: string;
+  city: string;
+  travelTime: string;
+  h1: string;
+  metaTitle: string;
+  metaDescription: string;
+  intro: string;
+  localKeywords: string[];
+  localFaq: FAQ[];
+  areaCoverage: string[];
+  audience: string[];
+  services: string[];
+  cta: string;
+  longSections: { title: string; content: string }[];
+};
+
+const topLocations = [
+  { city: 'Tarnów', slug: 'sprzatanie-tarnow', travelTime: 'do 20 minut' },
+  { city: 'Mościce', slug: 'sprzatanie-moscice', travelTime: 'do 25 minut' },
+  { city: 'Skrzyszów', slug: 'sprzatanie-skrzyszow', travelTime: 'do 20 minut' },
+  { city: 'Tuchów', slug: 'sprzatanie-tuchow', travelTime: 'do 30 minut' },
+  { city: 'Żabno', slug: 'sprzatanie-zabno', travelTime: 'do 35 minut' },
+  { city: 'Lisia Góra', slug: 'sprzatanie-lisia-gora', travelTime: 'do 20 minut' },
+  { city: 'Wierzchosławice', slug: 'sprzatanie-wierzchoslawice', travelTime: 'do 25 minut' },
+  { city: 'Wojnicz', slug: 'sprzatanie-wojnicz', travelTime: 'do 30 minut' },
+  { city: 'Pleśna', slug: 'sprzatanie-plesna', travelTime: 'do 30 minut' },
+  { city: 'Dąbrowa Tarnowska', slug: 'sprzatanie-dabrowa-tarnowska', travelTime: 'do 40 minut' }
+];
+
+const additionalLocations = [
+  { city: 'Ryglice', slug: 'sprzatanie-ryglice', travelTime: 'do 35 minut' },
+  { city: 'Szerzyny', slug: 'sprzatanie-szerzyny', travelTime: 'do 45 minut' },
+  { city: 'Radłów', slug: 'sprzatanie-radlow', travelTime: 'do 30 minut' },
+  { city: 'Olesno', slug: 'sprzatanie-olesno', travelTime: 'do 30 minut' },
+  { city: 'Szczucin', slug: 'sprzatanie-szczucin', travelTime: 'do 50 minut' },
+  { city: 'Ciężkowice', slug: 'sprzatanie-ciezkowice', travelTime: 'do 45 minut' },
+  { city: 'Zakliczyn', slug: 'sprzatanie-zakliczyn', travelTime: 'do 40 minut' },
+  { city: 'Gromnik', slug: 'sprzatanie-gromnik', travelTime: 'do 35 minut' },
+  { city: 'Czarna', slug: 'sprzatanie-czarna', travelTime: 'do 30 minut' },
+  { city: 'Borzęcin', slug: 'sprzatanie-borzecin', travelTime: 'do 45 minut' },
+  { city: 'Brzesko', slug: 'sprzatanie-brzesko', travelTime: 'do 45 minut' },
+  { city: 'Dębno', slug: 'sprzatanie-debno', travelTime: 'do 50 minut' },
+  { city: 'Wola Rzędzińska', slug: 'sprzatanie-wola-rzedzinska', travelTime: 'do 20 minut' },
+  { city: 'Zgłobice', slug: 'sprzatanie-zglobice', travelTime: 'do 20 minut' },
+  { city: 'Koszyce Małe', slug: 'sprzatanie-koszyce-male', travelTime: 'do 20 minut' },
+  { city: 'Koszyce Wielkie', slug: 'sprzatanie-koszyce-wielkie', travelTime: 'do 20 minut' },
+  { city: 'Ładna', slug: 'sprzatanie-ladna', travelTime: 'do 20 minut' },
+  { city: 'Jodłówka-Wałki', slug: 'sprzatanie-jodlowka-walki', travelTime: 'do 25 minut' },
+  { city: 'Pogórska Wola', slug: 'sprzatanie-pogorska-wola', travelTime: 'do 30 minut' },
+  { city: 'Zbylitowska Góra', slug: 'sprzatanie-zbylitowska-gora', travelTime: 'do 20 minut' }
+];
+
+const longSectionTemplate = (city: string, travelTime: string) => ([
+  {
+    title: `Sprzątanie ${city}: dlaczego lokalna firma daje realną przewagę`,
+    content: `Jeżeli wpisujesz w Google frazę „sprzątanie ${city}”, najpewniej nie szukasz przypadkowej ekipy, ale partnera, który dojedzie o umówionej godzinie, wykona usługę bez chaosu organizacyjnego i zostawi po sobie efekt, który od razu widać. Zielony Błysk działa w Tarnowie i okolicy do około 30 km, dlatego organizujemy pracę tak, aby klient nie tracił czasu na wielokrotne telefony i niejasne ustalenia. W praktyce oznacza to krótki proces: zgłoszenie, szybki kontakt zwrotny, konkretny zakres i termin, a potem realizacja. Dla mieszkańców ${city} ważna jest przewidywalność — kiedy ekipa ma dojazd ${travelTime}, łatwiej zaplanować sprzątanie mieszkania przed wynajmem, przygotowanie domu na święta, serwis biura po godzinach czy gruntowne czyszczenie po remoncie. Pracujemy na profesjonalnych środkach i sprzęcie, ale najważniejsze jest to, że myślimy procesowo: inna kolejność działań dla lokalu po remoncie, inna dla biura z ruchem klientów i inna dla wspólnoty mieszkaniowej. Dzięki temu nie płacisz za „ogólne porządki”, tylko za efekt dopasowany do konkretnego celu biznesowego lub prywatnego.`
+  },
+  {
+    title: `Jakie usługi wykonujemy w ${city}`,
+    content: `Najczęściej realizujemy cztery grupy zleceń. Po pierwsze sprzątanie mieszkań i domów: od odkurzania, mycia podłóg i łazienek po doczyszczanie kuchni, sprzętów AGD oraz stref trudnych, gdzie gromadzi się tłuszcz i kurz. Po drugie sprzątanie biur i lokali usługowych: stanowiska pracy, zaplecza socjalne, sanitariaty, witryny, wejścia i strefy obsługi klienta. Po trzecie sprzątanie po remoncie i po budowie, czyli usuwanie pyłu pobudowlanego, mycie stolarki, doczyszczanie fug, listew i detali wykończeniowych. Po czwarte obsługa wspólnot i zarządców: klatki schodowe, korytarze, windy, wejścia, garaże oraz otoczenie budynków. W ${city} łączymy te usługi w pakiety jednorazowe i abonamentowe, bo część klientów potrzebuje szybkiego „resetu” przestrzeni, a część stałego standardu tydzień po tygodniu. Każdy pakiet można rozszerzyć o mycie okien, pranie tapicerki, czyszczenie kostki lub ozonowanie. To istotne zwłaszcza wtedy, gdy liczy się czas i chcesz zamknąć temat porządków w jednej współpracy, bez kontaktu z kilkoma wykonawcami.`
+  },
+  {
+    title: `Dla kogo pracujemy: dom, firma, wspólnota`,
+    content: `W segmencie klientów indywidualnych obsługujemy osoby zapracowane, rodziny z dziećmi, seniorów oraz właścicieli mieszkań na wynajem. W tym modelu liczy się wygoda: krótki formularz, szybka wycena i termin dopasowany do rytmu dnia. Dla firm kluczowe są inne parametry: punktualność, elastyczne godziny serwisu, możliwość pracy poza godzinami operacyjnymi, faktura VAT i stała jakość niezależnie od pory roku. Dlatego w biurach i lokalach usługowych wdrażamy checklisty i powtarzalne standardy. Z kolei wspólnoty i zarządcy potrzebują przewidywalności, bo odpowiadają przed mieszkańcami za estetykę części wspólnych oraz bezpieczeństwo użytkowania przestrzeni. W ${city} realizujemy harmonogramy tygodniowe i miesięczne, z raportowaniem wykonania i możliwością interwencji. Ten podział na segmenty nie jest marketingowym hasłem — to sposób na szybszą decyzję klienta i wyższą konwersję, ponieważ każda grupa trafia na podstronę ze swoim językiem korzyści, inną ofertą i osobnym CTA.`
+  },
+  {
+    title: `Jak szybko dojeżdżamy do ${city} i jak wygląda organizacja`,
+    content: `Dojazd do ${city} zajmuje nam zwykle ${travelTime}. Dzięki temu możemy obsługiwać zarówno zaplanowane serwisy cykliczne, jak i zlecenia pilne: mieszkanie do oddania najemcy, lokal po zakończonym remoncie, biuro przed wizytą klienta lub część wspólną po intensywnym weekendzie. Na etapie zgłoszenia zbieramy tylko dane, które realnie wpływają na koszt i harmonogram: metraż, rodzaj obiektu, poziom zabrudzeń, oczekiwany termin i zakres usługi. Następnie dostajesz propozycję wariantu podstawowego oraz opcjonalnych rozszerzeń, aby decyzja była szybka i transparentna. W dniu realizacji pracujemy według kolejności minimalizującej ryzyko poprawek, a po zakończeniu potwierdzamy wykonanie. Taki model sprawdza się w lokalnym SEO, bo użytkownik otrzymuje od razu konkretną odpowiedź na pytania zakupowe: czy dojeżdżacie, kiedy możecie wejść, ile to kosztuje i co dokładnie obejmuje usługa.`
+  },
+  {
+    title: `Sprzątanie po remoncie ${city} — usługa wysokiej intencji zakupowej`,
+    content: `Fraza „sprzątanie po remoncie ${city}” ma jedną z najwyższych intencji transakcyjnych, ponieważ klient zwykle potrzebuje pomocy natychmiast i chce osiągnąć gotowość lokalu do użytkowania. Właśnie dlatego ta usługa ma osobny landing i osobny przekaz. W praktyce zaczynamy od usunięcia pyłu z powierzchni poziomych i pionowych, następnie przechodzimy do stolarki, osprzętu, fug, listew oraz elementów wymagających pracy detalicznej. Osobno traktujemy przeszklenia i łazienki, gdzie po remoncie często zostają osady po materiałach budowlanych. Dla klientów z ${city} ważne jest, że potrafimy pracować etapowo: najpierw porządki po ekipach, potem dopracowanie przed odbiorem i finalny serwis przygotowujący wnętrze do zamieszkania lub uruchomienia działalności. Dzięki lokalnej logistyce skracamy czas między końcem remontu a wejściem użytkownika, co przekłada się bezpośrednio na oszczędność i komfort.`
+  },
+  {
+    title: `Cennik, wycena i model współpracy`,
+    content: `Wycena w Zielonym Błysku jest bezpłatna i niezobowiązująca. Dla klientów z ${city} pokazujemy stawki „od”, bo końcowa cena zależy od metrażu, częstotliwości, poziomu zabrudzeń i dodatkowych usług. Najważniejsze jest jednak to, że każda wycena ma czytelny zakres: klient wie, co jest w pakiecie, co można dokupić i w jakiej cenie. Przy współpracy cyklicznej proponujemy model abonamentowy, który stabilizuje koszt i ułatwia planowanie. W segmencie firm i wspólnot największą wartością jest przewidywalność budżetu oraz jakość utrzymywana miesiąc po miesiącu. W segmencie mieszkań i domów dominują zlecenia jednorazowe połączone z opcją powrotu w ustalonym rytmie. Taki układ wspiera konwersję, ponieważ usuwa główne bariery zakupowe: obawę przed ukrytymi kosztami, niepewność co do zakresu oraz brak jasnej ścieżki kontaktu.`
+  },
+  {
+    title: `SEO lokalne dla ${city}: jak budujemy widoczność i leady`,
+    content: `Ta podstrona jest częścią większego systemu stron lokalnych przygotowanego pod frazy: „sprzątanie ${city}”, „firma sprzątająca ${city}”, „sprzątanie po remoncie ${city}” i „sprzątanie biur ${city}”. Każda lokalizacja ma unikalny nagłówek, treść sprzedażową, lokalne FAQ, sekcję obszaru działania i siatkę linków wewnętrznych do sąsiednich miejscowości. Dzięki temu Google lepiej rozumie kontekst geograficzny, a użytkownik łatwiej przechodzi między podstronami i usługami. Dodatkowo stosujemy dane strukturalne LocalBusiness, FAQ i BreadcrumbList, aby zwiększyć czytelność strony dla wyszukiwarki i poprawić CTR w wynikach. Treść została zaprojektowana tak, by odpowiadać jednocześnie na pytania informacyjne i transakcyjne: kto świadczy usługę, jaki jest zakres, ile trwa dojazd, dla kogo to rozwiązanie i jak szybko można zacząć. To fundament systemu generowania klientów, a nie tylko wizytówki firmy.`
+  },
+  {
+    title: `Dlaczego klienci z ${city} wracają`,
+    content: `Na rynku usług porządkowych wygrywa nie najtańsza oferta, ale powtarzalność efektu i dobra komunikacja. Dlatego w ${city} skupiamy się na punktualności, przewidywalnym standardzie i szybkim reagowaniu. Klienci wracają, bo wiedzą, że po zleceniu nie zostają z listą poprawek. Dla osób prywatnych oznacza to więcej czasu i mniej stresu. Dla firm — lepsze doświadczenie pracowników oraz klientów odwiedzających biuro czy lokal usługowy. Dla wspólnot i zarządców — mniejszą liczbę zgłoszeń i spokojniejsze utrzymanie nieruchomości. Jeżeli potrzebujesz jednorazowego mocnego wejścia, wykonamy usługę od A do Z. Jeżeli szukasz długofalowej współpracy, ustawimy harmonogram i standardy, które można skalować na wiele adresów. W obu przypadkach celem jest ten sam rezultat: czysta przestrzeń, która pracuje na Twój komfort, wizerunek i wyniki.`
+  },
+  {
+    title: `Umów sprzątanie w ${city} — szybkie CTA`,
+    content: `Jeśli interesuje Cię skuteczne i terminowe sprzątanie ${city}, zadzwoń lub wyślij formularz. Otrzymasz szybką odpowiedź, orientacyjną wycenę i najbliższy możliwy termin realizacji. Obsługujemy mieszkania, domy, biura, wspólnoty i obiekty po remoncie. Działamy lokalnie, więc nie tracisz czasu na długie oczekiwanie i wieloetapowe ustalenia. Możesz zamówić jednorazowe sprzątanie lub stałą współpracę abonamentową. Jeżeli zależy Ci na porównaniu opcji, przygotujemy dwa warianty: podstawowy i rozszerzony, aby łatwo dopasować usługę do budżetu. Zostaw kontakt już teraz — oddzwonimy i przeprowadzimy Cię przez cały proces krok po kroku.`
+  }
+]);
+
+export const localSeoPages: LocalSeoPage[] = [...topLocations, ...additionalLocations].map((loc, index, all) => {
+  const related = all.filter((x) => x.slug !== loc.slug).slice(index % 6, (index % 6) + 6).map((x) => x.city);
+  return {
+    slug: loc.slug,
+    city: loc.city,
+    travelTime: loc.travelTime,
+    h1: `Sprzątanie ${loc.city} — firma sprzątająca dla domu, biura i wspólnot`,
+    metaTitle: `Sprzątanie ${loc.city} | Firma sprzątająca Zielony Błysk`,
+    metaDescription: `Sprzątanie ${loc.city}: mieszkania, biura, wspólnoty i sprzątanie po remoncie. Dojazd ${loc.travelTime}, szybka wycena i wolne terminy.`,
+    intro: `Realizujemy sprzątanie w ${loc.city} i okolicach. Obsługujemy klientów indywidualnych, firmy oraz wspólnoty mieszkaniowe w modelu jednorazowym i abonamentowym.`,
+    localKeywords: [`sprzątanie ${loc.city}`, `firma sprzątająca ${loc.city}`, `sprzątanie po remoncie ${loc.city}`, `sprzątanie biur ${loc.city}`],
+    localFaq: [
+      { q: `Ile kosztuje sprzątanie w ${loc.city}?`, a: 'Wycena zależy od metrażu i zakresu. Wysyłamy jasną ofertę z cenami „od” i zakresem pakietu.' },
+      { q: `Czy dojeżdżacie szybko do ${loc.city}?`, a: `Tak, standardowy czas dojazdu to ${loc.travelTime}.` },
+      { q: `Czy obsługujecie firmy i wspólnoty w ${loc.city}?`, a: 'Tak, prowadzimy zarówno zlecenia jednorazowe, jak i kontrakty cykliczne z fakturą VAT.' }
+    ],
+    areaCoverage: related,
+    audience: ['Dom i mieszkanie', 'Firma i biuro', 'Wspólnota i zarządca'],
+    services: ['sprzątanie mieszkań', 'sprzątanie po remoncie', 'sprzątanie biur', 'sprzątanie wspólnot'],
+    cta: `Umów sprzątanie w ${loc.city}`,
+    longSections: longSectionTemplate(loc.city, loc.travelTime)
+  };
+});
+
+export const top10SeoLocations = topLocations.map((loc) => loc.slug);
 
 export const adLandingPages = [
   { slug: 'sprzatanie-mieszkan-tarnow', keyword: 'sprzątanie mieszkań Tarnów', usp: 'Lokalna ekipa, szybki termin i jasny cennik.' },
