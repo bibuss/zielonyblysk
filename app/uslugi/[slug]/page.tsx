@@ -1,18 +1,68 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { FullLeadForm } from '@/components/LeadForm';
+import { JsonLd } from '@/components/JsonLd';
 import { company, services } from '@/lib/site-data';
 
 export function generateStaticParams() { return services.map((s) => ({ slug: s.slug })); }
+
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const s = services.find((x) => x.slug === params.slug);
-  return s ? { title: `${s.name} | ${company.name}`, description: `${s.name}. Szybki termin, darmowa wycena i dojazd w promieniu 30 km od Tarnowa.` } : {};
+  const service = services.find((x) => x.slug === params.slug);
+  if (!service) return {};
+  return {
+    title: service.metaTitle,
+    description: service.metaDescription,
+    alternates: { canonical: `/uslugi/${service.slug}` },
+    openGraph: { title: service.metaTitle, description: service.metaDescription, url: `${company.siteUrl}/uslugi/${service.slug}` }
+  };
 }
 
 export default function ServicePage({ params }: { params: { slug: string } }) {
   const service = services.find((x) => x.slug === params.slug);
   if (!service) return notFound();
+
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: service.name,
+    provider: { '@type': 'CleaningService', name: company.name },
+    areaServed: 'Tarnów + 30 km'
+  };
+
   return (
-    <main className="section"><div className="container grid gap-8 lg:grid-cols-2"><article><h1 className="h2">{service.hero}</h1><p className="mt-3 text-slate-700">{service.lead}</p><p className="mt-4 font-semibold">Cena orientacyjna: {service.priceFrom}</p><h2 className="mt-8 h3">Dla kogo?</h2><ul className="mt-3 space-y-2 text-sm">{service.audience.map((a)=><li key={a}>• {a}</li>)}</ul><h2 className="mt-8 h3">Korzyści</h2><ul className="mt-3 space-y-2 text-sm">{service.benefits.map((b)=><li key={b}>• {b}</li>)}</ul><h2 className="mt-8 h3">Jak realizujemy usługę</h2><ol className="mt-3 space-y-2 text-sm">{service.process.map((p)=><li key={p}>{p}</li>)}</ol><h2 className="mt-8 h3">FAQ</h2>{service.faq.map((f)=><details key={f.q} className="card mt-3"><summary className="font-semibold">{f.q}</summary><p className="mt-2 text-sm">{f.a}</p></details>)}</article><div id="formularz"><FullLeadForm /></div></div></main>
+    <main className="section">
+      <div className="container grid gap-8 lg:grid-cols-2">
+        <article>
+          <Breadcrumbs items={[{ label: 'Start', href: '/' }, { label: 'Usługi', href: '/#uslugi' }, { label: service.name }]} />
+          <h1 className="h2">{service.hero}</h1>
+          <p className="mt-3 text-slate-700">{service.lead}</p>
+          <p className="mt-3 rounded-xl bg-brand-50 p-4 text-sm font-medium text-brand-800">{service.buyerIntent}</p>
+          <p className="mt-4 font-semibold">Cena orientacyjna: {service.priceFrom}</p>
+
+          <h2 className="mt-8 h3">Zakres usługi</h2>
+          <ul className="mt-3 space-y-2 text-sm">{service.scope.map((a)=><li key={a}>• {a}</li>)}</ul>
+
+          <h2 className="mt-8 h3">Dla kogo?</h2>
+          <ul className="mt-3 space-y-2 text-sm">{service.audience.map((a)=><li key={a}>• {a}</li>)}</ul>
+
+          <h2 className="mt-8 h3">Korzyści</h2>
+          <ul className="mt-3 space-y-2 text-sm">{service.benefits.map((b)=><li key={b}>• {b}</li>)}</ul>
+
+          <h2 className="mt-8 h3">Jak realizujemy usługę</h2>
+          <ol className="mt-3 space-y-2 text-sm">{service.process.map((p, i)=><li key={p}><strong>{i + 1}.</strong> {p}</li>)}</ol>
+
+          <h2 className="mt-8 h3">FAQ</h2>
+          {service.faq.map((f)=><details key={f.q} className="card mt-3"><summary className="font-semibold">{f.q}</summary><p className="mt-2 text-sm">{f.a}</p></details>)}
+
+          <div className="mt-8 rounded-2xl bg-slate-100 p-5 text-sm">
+            Zobacz również: {services.slice(0, 4).map((s, idx) => <span key={s.slug}><Link href={`/uslugi/${s.slug}`} className="text-brand-700 underline">{s.short}</Link>{idx < 3 ? ', ' : '.'}</span>)}
+          </div>
+        </article>
+        <div id="formularz"><FullLeadForm /></div>
+      </div>
+      <JsonLd data={schema} />
+    </main>
   );
 }
